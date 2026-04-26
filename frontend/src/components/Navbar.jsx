@@ -34,21 +34,21 @@ export default function Navbar({ onOrder }) {
         scrolled ? "glass border-b border-[#161616]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 h-20 sm:h-24 lg:h-28 flex items-center justify-between">
         <button
           onClick={() => go("hero")}
           data-testid="logo-btn"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 sm:gap-4"
         >
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/5eg7p8in_logo.png"
             alt="ITK FOOD"
-            className="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover shrink-0"
+            className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full object-cover shrink-0"
           />
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
             alt="Le snack du peuple, fait par le peuple !"
-            className="hidden sm:block h-10 lg:h-12 w-auto select-none"
+            className="hidden sm:block h-14 sm:h-16 lg:h-20 w-auto select-none"
             draggable="false"
           />
           <span className="sr-only">ITK FOOD — Le snack du peuple, fait par le peuple</span>
