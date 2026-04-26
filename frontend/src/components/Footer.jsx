@@ -1,4 +1,5 @@
 import { Ghost, Instagram, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { INFO } from "../data/menu";
 
 export default function Footer() {
@@ -60,7 +61,19 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-[#161616] text-xs text-white/40">
           <p>© {new Date().getFullYear()} ITK FOOD — Florange. Tous droits réservés.</p>
-          <p className="tracking-[0.22em] uppercase">Demo design · v1.0</p>
+          <div className="flex flex-wrap gap-3 items-center">
+            <Link to="/mentions-legales" data-testid="footer-legal" className="hover:text-[#FF7A00] transition">
+              Mentions légales
+            </Link>
+            <span>·</span>
+            <Link to="/confidentialite" data-testid="footer-privacy" className="hover:text-[#FF7A00] transition">
+              Confidentialité
+            </Link>
+            <span>·</span>
+            <Link to="/cgv" data-testid="footer-terms" className="hover:text-[#FF7A00] transition">
+              CGV
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
