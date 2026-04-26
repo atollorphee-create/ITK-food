@@ -98,7 +98,7 @@ export default function Hero({ onOrder }) {
             </span>
             <span className="hidden sm:flex items-center gap-2">
               <Star size={14} className="text-[#FF7A00] fill-[#FF7A00]" />
-              4.7 — Snackeurs Florangeois
+              4.8 — Snackeurs Florangeois
             </span>
           </div>
           <span className="hidden sm:block text-white/40 tracking-[0.3em] uppercase">
