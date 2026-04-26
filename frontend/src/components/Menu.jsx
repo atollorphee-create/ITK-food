@@ -7,6 +7,9 @@ import {
   Sparkles,
   ArrowUpRight,
   Plus,
+  Cookie,
+  Baby,
+  Drumstick,
 } from "lucide-react";
 import { CATEGORIES } from "../data/menu";
 
@@ -16,6 +19,9 @@ const ICONS = {
   tacos: UtensilsCrossed,
   soup: Soup,
   sparkles: Sparkles,
+  fries: Drumstick,
+  cake: Cookie,
+  child: Baby,
 };
 
 function ItemCard({ name, price, desc, i }) {
@@ -81,10 +87,103 @@ function TacosBuilder({ builder }) {
   );
 }
 
+function PoutineBuilder({ poutine }) {
+  return (
+    <div className="mt-6 grid lg:grid-cols-2 gap-3 sm:gap-4 opacity-0 animate-[pop-in_0.4s_ease-out_forwards]">
+      <div className="rounded-[20px] border border-[#1a1a1a] bg-[#0e0e0e] p-5 sm:p-6">
+        <p className="num-tag mb-4">[ Composition ]</p>
+        <ul className="space-y-2.5">
+          {poutine.composition.map((c, i) => (
+            <li key={c} className="flex items-center gap-3 text-sm">
+              <span className="h-6 w-6 rounded-full bg-[#FF7A00]/15 border border-[#FF7A00]/40 grid place-items-center text-[10px] font-display text-[#FF7A00]">
+                {i + 1}
+              </span>
+              <span className="text-white/85">{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="rounded-[20px] border border-[#1a1a1a] bg-[#0e0e0e] p-5 sm:p-6">
+        <p className="num-tag mb-4">[ Au choix · Viandes ]</p>
+        <div className="flex flex-wrap gap-2">
+          {poutine.viandes.map((v) => (
+            <span
+              key={v}
+              className="px-3 py-1.5 rounded-full bg-[#161616] border border-[#1f1f1f] text-xs text-white/80 hover:border-[#FF7A00]/40 hover:text-white transition"
+            >
+              {v}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function KidsMenu({ kids }) {
+  return (
+    <div className="grid lg:grid-cols-3 gap-3 sm:gap-4 opacity-0 animate-[pop-in_0.4s_ease-out_forwards]">
+      {/* Featured price card */}
+      <div className="lg:col-span-1 relative overflow-hidden rounded-[20px] border border-[#FF7A00]/40 bg-gradient-to-br from-[#FF7A00]/15 to-[#0e0e0e] p-7 flex flex-col justify-between min-h-[200px]">
+        <div className="absolute -top-6 -right-6 h-32 w-32 rounded-full bg-[#FF7A00]/20 blur-3xl" />
+        <p className="num-tag relative">[ Pour les petits ]</p>
+        <div className="relative">
+          <p className="font-display text-6xl sm:text-7xl text-[#FF7A00] glow-orange-text leading-none">
+            {kids.price}
+          </p>
+          <p className="mt-2 text-xs text-white/60 uppercase tracking-[0.22em]">
+            Le menu complet
+          </p>
+        </div>
+      </div>
+
+      <div className="rounded-[20px] border border-[#1a1a1a] bg-[#0e0e0e] p-5 sm:p-6">
+        <p className="num-tag mb-4">[ Au choix ]</p>
+        <ul className="space-y-2.5">
+          {kids.choices.map((c) => (
+            <li key={c} className="flex items-center gap-3 text-sm">
+              <span className="h-6 w-6 rounded-full bg-[#FF7A00]/15 border border-[#FF7A00]/40 grid place-items-center">
+                <Plus size={11} className="text-[#FF7A00]" />
+              </span>
+              <span className="text-white/85">{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="rounded-[20px] border border-[#1a1a1a] bg-[#0e0e0e] p-5 sm:p-6">
+        <p className="num-tag mb-4">[ Inclus ]</p>
+        <ul className="space-y-2.5">
+          {kids.includes.map((c) => (
+            <li key={c} className="flex items-center gap-3 text-sm">
+              <span className="h-6 w-6 rounded-full bg-[#FF7A00]/15 border border-[#FF7A00]/40 grid place-items-center">
+                <Plus size={11} className="text-[#FF7A00]" />
+              </span>
+              <span className="text-white/85">{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export default function Menu() {
   const [active, setActive] = useState(CATEGORIES[0].id);
   const cat = CATEGORIES.find((c) => c.id === active);
   const Icon = ICONS[cat.icon] || Sparkles;
+
+  const HEADINGS = {
+    "petite-faim": "Une petite faim ?",
+    desserts: "Les desserts",
+    "menu-enfant": "Menu enfant",
+    canadiennes: "Canadiennes",
+    tacos: "Tacos",
+    burgers: "Smash Burgers",
+    sandwichs: "Sandwichs",
+    divers: "Divers",
+  };
+  const heading = HEADINGS[active] || cat.label;
 
   return (
     <section
@@ -138,23 +237,31 @@ export default function Menu() {
           <Icon size={22} className="text-[#FF7A00]" />
         </div>
         <h3 className="font-display text-3xl sm:text-4xl leading-none">
-          {cat.label}
+          {heading}
         </h3>
       </div>
 
-      {/* Items grid */}
-      <div
-        key={active}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
-        data-testid={`menu-list-${active}`}
-      >
-        {cat.items.map((it, i) => (
-          <ItemCard key={it.name} {...it} i={i} />
-        ))}
-      </div>
+      {/* Items grid (hidden when no items, like menu-enfant) */}
+      {cat.items && cat.items.length > 0 && (
+        <div
+          key={active}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
+          data-testid={`menu-list-${active}`}
+        >
+          {cat.items.map((it, i) => (
+            <ItemCard key={it.name} {...it} i={i} />
+          ))}
+        </div>
+      )}
 
       {/* Tacos builder */}
       {cat.isTacos && cat.builder && <TacosBuilder builder={cat.builder} />}
+
+      {/* Poutine builder */}
+      {cat.isPoutine && cat.poutine && <PoutineBuilder poutine={cat.poutine} />}
+
+      {/* Kids menu */}
+      {cat.isKids && cat.kids && <KidsMenu kids={cat.kids} />}
     </section>
   );
 }
