@@ -38,14 +38,20 @@ export default function Navbar({ onOrder }) {
         <button
           onClick={() => go("hero")}
           data-testid="logo-btn"
-          className="flex items-center gap-2.5"
+          className="flex items-center gap-3"
         >
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/5eg7p8in_logo.png"
             alt="ITK FOOD"
-            className="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover"
+            className="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover shrink-0"
           />
-          <span className="sr-only">ITK FOOD</span>
+          <img
+            src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
+            alt="Le snack du peuple, fait par le peuple !"
+            className="hidden sm:block h-10 lg:h-12 w-auto select-none"
+            draggable="false"
+          />
+          <span className="sr-only">ITK FOOD — Le snack du peuple, fait par le peuple</span>
         </button>
 
         <nav className="hidden md:flex items-center gap-8">
