@@ -14,6 +14,7 @@ import Info from "./components/Info";
 import Footer from "./components/Footer";
 import OrderModal from "./components/OrderModal";
 import StickyOrder from "./components/StickyOrder";
+import Watermark from "./components/Watermark";
 import useReveal from "./hooks/useReveal";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
@@ -47,6 +48,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <Watermark />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mentions-legales" element={<Legal />} />

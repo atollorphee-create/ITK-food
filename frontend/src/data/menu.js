@@ -194,9 +194,13 @@ export const INFO = {
   snapchatUrl: "https://www.snapchat.com/@itk-food",
   instagramUrl: "https://www.instagram.com/itk.food57/",
   hours: [
-    { d: "Lun – Jeu", h: "11h30 – 14h30 · 18h – 22h30" },
-    { d: "Ven – Sam", h: "11h30 – 14h30 · 18h – 23h30" },
-    { d: "Dimanche", h: "18h – 22h30" },
+    { d: "Lundi", h: "11h30 – 14h · 17h30 – 23h" },
+    { d: "Mardi", h: "11h30 – 14h · 17h30 – 23h" },
+    { d: "Mercredi", h: "11h30 – 14h · 17h30 – 23h" },
+    { d: "Jeudi", h: "Fermé" },
+    { d: "Vendredi", h: "17h30 – 00h" },
+    { d: "Samedi", h: "11h30 – 14h · 17h30 – 00h" },
+    { d: "Dimanche", h: "11h – 14h · 17h30 – 23h" },
   ],
   services: ["Sur place", "À emporter", "Livraison"],
 };

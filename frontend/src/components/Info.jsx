@@ -93,11 +93,23 @@ export default function Info() {
             <p className="text-xs uppercase tracking-[0.22em] text-white/45 mb-4">
               Horaires
             </p>
-            <ul className="grid sm:grid-cols-3 gap-y-3 gap-x-6">
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
               {INFO.hours.map((h) => (
                 <li key={h.d} className="flex flex-col">
-                  <span className="font-display text-base text-white">{h.d}</span>
-                  <span className="text-xs text-white/55 mt-1">{h.h}</span>
+                  <span
+                    className={`font-display text-base ${
+                      h.h === "Fermé" ? "text-white/50 line-through" : "text-white"
+                    }`}
+                  >
+                    {h.d}
+                  </span>
+                  <span
+                    className={`text-xs mt-1 ${
+                      h.h === "Fermé" ? "text-red-400/80" : "text-white/55"
+                    }`}
+                  >
+                    {h.h}
+                  </span>
                 </li>
               ))}
             </ul>

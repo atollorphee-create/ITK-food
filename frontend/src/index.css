@@ -246,3 +246,24 @@ body {
 /* Hide scrollbar on horizontal lists if any */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* VYNTRAWEB filigrane — diagonal repeating watermark across whole site */
+.vyntra-watermark {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    overflow: hidden;
+}
+
+.vyntra-watermark::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='240'><text x='0' y='90' fill='%23ffffff' font-family='Arial Black, Anton, sans-serif' font-size='42' font-weight='900' letter-spacing='6'>VYNTRAWEB</text><text x='110' y='200' fill='%23FF7A00' font-family='Arial Black, Anton, sans-serif' font-size='42' font-weight='900' letter-spacing='6'>VYNTRAWEB</text></svg>");
+    background-repeat: repeat;
+    transform: rotate(-22deg);
+    opacity: 0.07;
+}
