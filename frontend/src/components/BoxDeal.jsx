@@ -61,23 +61,14 @@ export default function BoxDeal({ onOrder }) {
             </div>
           </div>
 
-          {/* Right image */}
-          <div className="relative min-h-[320px] lg:min-h-[560px]">
+          {/* Right image — visuel officiel ITK */}
+          <div className="relative min-h-[360px] lg:min-h-[600px] bg-black flex items-center justify-center p-4">
             <img
-              src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=1200&q=80"
-              alt="Box ITK"
-              className="absolute inset-0 w-full h-full object-cover"
+              src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/z6m7zzok_box%2010e.png"
+              alt="Box ITK 10€"
+              className="max-w-full max-h-full object-contain"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/85 via-transparent to-transparent lg:from-[#0a0a0a]/70" />
-
-            {/* Floating price tag */}
-            <div className="absolute top-6 right-6 sm:top-10 sm:right-10 rotate-6 animate-pulse">
-              <div className="bg-[#FF7A00] text-black rounded-2xl px-5 py-3 glow-orange">
-                <p className="text-[10px] uppercase tracking-[0.25em]">Seulement</p>
-                <p className="font-display text-3xl leading-none">10€</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -10,11 +10,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
         <div className="flex flex-wrap items-end justify-between gap-8 mb-10">
           <div>
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="h-9 w-9 rounded-lg bg-[#FF7A00] grid place-items-center font-display text-black text-sm">
-                ITK
-              </div>
-              <span className="font-display text-2xl tracking-wider">FOOD</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/5eg7p8in_logo.png"
+                alt="ITK FOOD"
+                className="h-14 w-14 rounded-full object-cover"
+              />
+              <span className="sr-only">ITK FOOD</span>
             </div>
             <p className="font-display text-3xl sm:text-4xl leading-tight max-w-md">
               Le snack du peuple,

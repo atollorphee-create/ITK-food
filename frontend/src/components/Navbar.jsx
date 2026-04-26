@@ -38,12 +38,12 @@ export default function Navbar({ onOrder }) {
           data-testid="logo-btn"
           className="flex items-center gap-2.5"
         >
-          <div className="h-9 w-9 rounded-lg bg-[#FF7A00] grid place-items-center font-display text-black text-sm">
-            ITK
-          </div>
-          <span className="font-display text-lg sm:text-xl tracking-wider">
-            FOOD
-          </span>
+          <img
+            src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/5eg7p8in_logo.png"
+            alt="ITK FOOD"
+            className="h-11 w-11 sm:h-12 sm:w-12 rounded-full object-cover"
+          />
+          <span className="sr-only">ITK FOOD</span>
         </button>
 
         <nav className="hidden md:flex items-center gap-8">

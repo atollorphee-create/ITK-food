@@ -39,7 +39,7 @@ export const FEATURED = [
     name: "Box ITK",
     price: "10€",
     desc: "2 mini cheese + frites cheddar oignons + tenders/wings.",
-    img: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=80",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/z6m7zzok_box%2010e.png",
     tag: "Deal du moment",
   },
 ];
