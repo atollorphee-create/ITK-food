@@ -45,15 +45,19 @@ export default function Hero({ onOrder }) {
         </h1>
 
         {/* Tagline */}
-        <p
+        {/* Tagline (visuel ITK officiel) */}
+        <div
           data-testid="hero-tagline"
-          className="reveal mt-8 sm:mt-10 max-w-4xl font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-[#FF7A00] glow-orange-text"
+          className="reveal mt-8 sm:mt-10"
           style={{ transitionDelay: "120ms" }}
         >
-          Le snack du peuple,
-          <br />
-          fait par le peuple.
-        </p>
+          <img
+            src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
+            alt="Le snack du peuple, fait par le peuple !"
+            className="w-full max-w-[520px] sm:max-w-[760px] lg:max-w-[920px] h-auto select-none"
+            draggable="false"
+          />
+        </div>
 
         <p
           className="reveal mt-5 max-w-xl text-white/65 text-base sm:text-lg leading-relaxed"
