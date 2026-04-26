@@ -12,6 +12,7 @@ import OrderSection from "./components/OrderSection";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
 import OrderModal from "./components/OrderModal";
+import StickyOrder from "./components/StickyOrder";
 import useReveal from "./hooks/useReveal";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
       <Info />
       <Footer />
       <OrderModal open={orderOpen} onClose={closeOrder} />
+      <StickyOrder onOrder={openOrder} />
     </div>
   );
 }
