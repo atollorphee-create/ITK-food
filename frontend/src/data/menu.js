@@ -7,7 +7,7 @@ export const FEATURED = [
     name: "L'Original",
     price: "6,90€",
     desc: "2 steaks smashés, sauce smash, double cheddar, oignons confits.",
-    img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/fljiy2wv_l%27original.png",
     tag: "Le classique",
   },
   {
@@ -15,7 +15,7 @@ export const FEATURED = [
     name: "Le Smoky",
     price: "8,50€",
     desc: "2 steaks, bacon, raclette fondue, sauce smoky, rosty croustillant.",
-    img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=900&q=80",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/sf7azvb8_le%20smocky.png",
     tag: "Premium",
   },
   {
@@ -23,7 +23,7 @@ export const FEATURED = [
     name: "Tacos ITK",
     price: "dès 6,50€",
     desc: "Galette grillée, frites, sauce fromagère, viandes au choix.",
-    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=900&q=80",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/2e2zours_tacos.png",
     tag: "Best-seller",
   },
   {
