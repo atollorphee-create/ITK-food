@@ -23,8 +23,9 @@ export default function Legal() {
 
       <Section title="2. Hébergement">
         <p>
-          Le site est hébergé par <strong>Emergent Cloud</strong> – plateforme de
-          déploiement applicatif, contact via le formulaire dédié de l&apos;hébergeur.
+          Le site est hébergé par <strong>VyntraWeb</strong> – agence de
+          conception et d&apos;hébergement web. Contact via le formulaire dédié de
+          l&apos;hébergeur.
         </p>
       </Section>
 
