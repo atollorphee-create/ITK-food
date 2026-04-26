@@ -47,7 +47,7 @@ export default function Hero({ onOrder }) {
         {/* Tagline */}
         <p
           data-testid="hero-tagline"
-          className="reveal mt-6 sm:mt-8 max-w-2xl font-display text-2xl sm:text-3xl lg:text-4xl text-[#FF7A00] glow-orange-text"
+          className="reveal mt-8 sm:mt-10 max-w-4xl font-display text-4xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-[#FF7A00] glow-orange-text"
           style={{ transitionDelay: "120ms" }}
         >
           Le snack du peuple,
