@@ -16,13 +16,13 @@ export default function Footer() {
                 alt="ITK FOOD"
                 className="h-14 w-14 rounded-full object-cover"
               />
-              <span className="sr-only">ITK FOOD</span>
+              <img
+                src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
+                alt="Le snack du peuple, fait par le peuple !"
+                className="h-16 sm:h-20 w-auto select-none"
+                draggable="false"
+              />
             </div>
-            <p className="font-display text-3xl sm:text-4xl leading-tight max-w-md">
-              Le snack du peuple,
-              <br />
-              <span className="text-[#FF7A00]">fait par le peuple.</span>
-            </p>
           </div>
 
           <div className="flex flex-col gap-3 text-sm text-white/55">

@@ -44,16 +44,19 @@ export default function Hero({ onOrder }) {
           <span className="hero-stroke">FOOD</span>
         </h1>
 
-        {/* Tagline */}
-        <p
+        {/* Tagline (visuel ITK officiel) */}
+        <div
           data-testid="hero-tagline"
-          className="reveal mt-6 sm:mt-8 max-w-2xl font-display text-2xl sm:text-3xl lg:text-4xl text-[#FF7A00] glow-orange-text"
+          className="reveal mt-6 sm:mt-8 max-w-3xl"
           style={{ transitionDelay: "120ms" }}
         >
-          Le snack du peuple,
-          <br />
-          fait par le peuple.
-        </p>
+          <img
+            src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
+            alt="Le snack du peuple, fait par le peuple !"
+            className="w-full max-w-[640px] h-auto select-none"
+            draggable="false"
+          />
+        </div>
 
         <p
           className="reveal mt-5 max-w-xl text-white/65 text-base sm:text-lg leading-relaxed"
