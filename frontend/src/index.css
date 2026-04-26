@@ -129,7 +129,7 @@ body {
     100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-    animation: marquee 38s linear infinite;
+    animation: marquee 22s linear infinite;
 }
 
 /* Pulse dot */

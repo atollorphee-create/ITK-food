@@ -38,17 +38,17 @@ export default function Navbar({ onOrder }) {
         <button
           onClick={() => go("hero")}
           data-testid="logo-btn"
-          className="flex items-center gap-3 sm:gap-4"
+          className="flex items-center gap-2 sm:gap-4"
         >
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/5eg7p8in_logo.png"
             alt="ITK FOOD"
-            className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full object-cover shrink-0"
+            className="h-10 w-10 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full object-cover shrink-0"
           />
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
             alt="Le snack du peuple, fait par le peuple !"
-            className="hidden sm:block h-14 sm:h-16 lg:h-20 w-auto select-none"
+            className="h-9 sm:h-16 lg:h-20 w-auto select-none"
             draggable="false"
           />
           <span className="sr-only">ITK FOOD — Le snack du peuple, fait par le peuple</span>
