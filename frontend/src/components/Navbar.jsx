@@ -16,6 +16,7 @@ export default function Navbar({ onOrder }) {
     { id: "produits", label: "Produits" },
     { id: "box", label: "Box ITK" },
     { id: "menu", label: "Menu" },
+    { id: "avis", label: "Avis" },
     { id: "infos", label: "Infos" },
   ];
 

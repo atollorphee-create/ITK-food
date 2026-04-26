@@ -6,6 +6,7 @@ import Marquee from "./components/Marquee";
 import Featured from "./components/Featured";
 import BoxDeal from "./components/BoxDeal";
 import Menu from "./components/Menu";
+import Reviews from "./components/Reviews";
 import OrderSection from "./components/OrderSection";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
@@ -27,6 +28,7 @@ function App() {
       <Featured onOrder={openOrder} />
       <BoxDeal onOrder={openOrder} />
       <Menu />
+      <Reviews />
       <OrderSection onOrder={openOrder} />
       <Info />
       <Footer />
