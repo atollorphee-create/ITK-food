@@ -191,8 +191,8 @@ export const INFO = {
   phone: "09 54 53 37 57",
   phoneRaw: "+33954533757",
   mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=6+rue+de+Verdun+57190+Florange",
-  snapchatUrl: "#",
-  instagramUrl: "#",
+  snapchatUrl: "https://www.snapchat.com/@itk-food",
+  instagramUrl: "https://www.instagram.com/itk.food57/",
   hours: [
     { d: "Lun – Jeu", h: "11h30 – 14h30 · 18h – 22h30" },
     { d: "Ven – Sam", h: "11h30 – 14h30 · 18h – 23h30" },

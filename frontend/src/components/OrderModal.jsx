@@ -41,7 +41,7 @@ export default function OrderModal({ open, onClose }) {
     {
       id: "snap",
       label: "Snapchat",
-      sub: "@itkfood",
+      sub: "@itk-food",
       icon: Ghost,
       href: INFO.snapchatUrl,
       target: "_blank",
@@ -50,7 +50,7 @@ export default function OrderModal({ open, onClose }) {
     {
       id: "insta",
       label: "Instagram",
-      sub: "@itk_food",
+      sub: "@itk.food57",
       icon: Instagram,
       href: INFO.instagramUrl,
       target: "_blank",

@@ -20,7 +20,7 @@ export default function OrderSection({ onOrder }) {
     },
     {
       label: "Snapchat",
-      sub: "@itkfood",
+      sub: "@itk-food",
       Icon: Ghost,
       href: INFO.snapchatUrl,
       target: "_blank",
@@ -28,7 +28,7 @@ export default function OrderSection({ onOrder }) {
     },
     {
       label: "Instagram",
-      sub: "@itk_food",
+      sub: "@itk.food57",
       Icon: Instagram,
       href: INFO.instagramUrl,
       target: "_blank",
