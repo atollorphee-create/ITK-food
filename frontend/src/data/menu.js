@@ -39,7 +39,7 @@ export const FEATURED = [
     name: "Poutine ITK",
     price: "6,90€",
     desc: "Frites, viande au choix, cheddar, oignons frits, mozza gratinée.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/d8ldtpd3_image.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8zthyjsc_ChatGPT%20Image%2026%20avr.%202026%2C%2023_34_31.png",
     tag: "Notre signature",
   },
 ];
