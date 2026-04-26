@@ -10,16 +10,16 @@ export default function Featured({ onOrder }) {
     >
       <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
         <div className="reveal">
-          <p className="num-tag mb-3">[ 01 / Produits phares ]</p>
+          <p className="num-tag mb-3">[ 01 / Les 5 classiques ]</p>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.9]">
-            La street-food,
+            Le top 5,
             <br />
-            <span className="text-[#FF7A00] glow-orange-text">version ITK.</span>
+            <span className="text-[#FF7A00] glow-orange-text">choisi par vous.</span>
           </h2>
         </div>
         <p className="reveal max-w-sm text-white/60 text-sm leading-relaxed" style={{ transitionDelay: "120ms" }}>
-          Cinq classiques, faits minute, sans chichis. Le goût d&apos;abord —
-          le reste suit.
+          Les produits les plus commandés, les plus rentables et les plus
+          compréhensibles. Direct, sans détour.
         </p>
       </div>
 
