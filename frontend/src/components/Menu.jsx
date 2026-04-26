@@ -181,7 +181,7 @@ export default function Menu() {
     tacos: "Tacos",
     burgers: "Smash Burgers",
     sandwichs: "Sandwichs",
-    divers: "Divers",
+    divers: "Les Classiques",
   };
   const heading = HEADINGS[active] || cat.label;
 

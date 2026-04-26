@@ -169,7 +169,7 @@ export const CATEGORIES = [
   },
   {
     id: "divers",
-    label: "Divers",
+    label: "Les Classiques",
     icon: "sparkles",
     items: [
       { name: "Le Cheese", price: "5,50€", desc: "Le classique fondant." },
