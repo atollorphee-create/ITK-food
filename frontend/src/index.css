@@ -262,8 +262,8 @@ body {
     inset: -50%;
     width: 200%;
     height: 200%;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='240'><text x='0' y='90' fill='%23ffffff' font-family='Arial Black, Anton, sans-serif' font-size='42' font-weight='900' letter-spacing='6'>VYNTRAWEB</text><text x='110' y='200' fill='%23FF7A00' font-family='Arial Black, Anton, sans-serif' font-size='42' font-weight='900' letter-spacing='6'>VYNTRAWEB</text></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='180'><text x='0' y='110' fill='%23ffffff' font-family='Arial Black, Anton, sans-serif' font-size='44' font-weight='900' letter-spacing='6'>VYNTRAWEB</text></svg>");
     background-repeat: repeat;
     transform: rotate(-22deg);
-    opacity: 0.07;
+    opacity: 0.04;
 }
