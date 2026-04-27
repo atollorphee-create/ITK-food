@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import { Phone, MapPin, Ghost, Instagram, X } from "lucide-react";
+import { Phone, MapPin, Ghost, Instagram, X, ShoppingBag } from "lucide-react";
 import { INFO } from "../data/menu";
+import { useCart } from "../context/CartContext";
 
 export default function OrderModal({ open, onClose }) {
+  const { openDrawer, count } = useCart();
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -21,12 +23,23 @@ export default function OrderModal({ open, onClose }) {
 
   const actions = [
     {
+      id: "site",
+      label: count > 0 ? `Via le site (${count})` : "Via le site",
+      sub: "Composer ma commande",
+      icon: ShoppingBag,
+      onClick: () => {
+        onClose();
+        setTimeout(openDrawer, 150);
+      },
+      accent: true,
+      testid: "modal-action-site",
+    },
+    {
       id: "call",
       label: "Appeler",
       sub: INFO.phone,
       icon: Phone,
       href: `tel:${INFO.phoneRaw}`,
-      accent: true,
       testid: "modal-action-call",
     },
     {
@@ -98,14 +111,20 @@ export default function OrderModal({ open, onClose }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 relative">
           {actions.map((a) => {
             const Icon = a.icon;
+            const Tag = a.href ? "a" : "button";
+            const tagProps = a.href
+              ? {
+                  href: a.href,
+                  target: a.target,
+                  rel: a.target === "_blank" ? "noopener noreferrer" : undefined,
+                }
+              : { type: "button", onClick: a.onClick };
             return (
-              <a
+              <Tag
                 key={a.id}
-                href={a.href}
-                target={a.target}
-                rel={a.target === "_blank" ? "noopener noreferrer" : undefined}
+                {...tagProps}
                 data-testid={a.testid}
-                className={`group flex items-center gap-4 p-4 rounded-2xl border transition ${
+                className={`group flex items-center gap-4 p-4 rounded-2xl border text-left transition ${
                   a.accent
                     ? "border-[#FF7A00] bg-[#FF7A00] text-black hover:bg-[#ff8c1a] glow-soft"
                     : "border-[#1f1f1f] bg-[#0f0f0f] hover:border-[#FF7A00] hover:bg-[#161616]"
@@ -126,7 +145,7 @@ export default function OrderModal({ open, onClose }) {
                     {a.sub}
                   </p>
                 </div>
-              </a>
+              </Tag>
             );
           })}
         </div>

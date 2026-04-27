@@ -76,7 +76,6 @@ export default function Navbar({ onOrder }) {
           >
             <Phone size={14} /> {INFO.phone}
           </a>
-          <CartButton />
           <button
             onClick={onOrder}
             data-testid="navbar-order-btn"
@@ -84,9 +83,17 @@ export default function Navbar({ onOrder }) {
           >
             Commander
           </button>
+          <CartButton />
         </div>
 
         <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={onOrder}
+            data-testid="navbar-order-btn-mobile"
+            className="btn-orange px-3 py-2 rounded-full text-[11px] font-display tracking-wider"
+          >
+            Commander
+          </button>
           <CartButton showTotal={false} />
           <button
             className="h-10 w-10 grid place-items-center rounded-lg border border-[#1f1f1f]"
