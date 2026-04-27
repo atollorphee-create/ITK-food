@@ -25,10 +25,9 @@ import CartDrawer from "./components/cart/CartDrawer";
 import ProductOptionsModal from "./components/cart/ProductOptionsModal";
 
 function CartLayer() {
-  // Mounted globally so cart works on every page
+  // Mounted globally so cart drawer + options modal work on every page
   return (
     <>
-      <CartButton />
       <CartDrawer />
       <ProductOptionsModal />
     </>

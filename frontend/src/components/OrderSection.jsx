@@ -1,8 +1,19 @@
-import { Phone, MapPin, Ghost, Instagram } from "lucide-react";
+import { Phone, MapPin, Ghost, Instagram, ShoppingBag } from "lucide-react";
 import { INFO } from "../data/menu";
+import { useCart } from "../context/CartContext";
 
 export default function OrderSection({ onOrder }) {
+  const { openDrawer, count } = useCart();
+
   const tiles = [
+    {
+      label: count > 0 ? `Panier (${count})` : "Site web",
+      sub: "Commander en ligne",
+      Icon: ShoppingBag,
+      onClick: openDrawer,
+      testid: "order-cart",
+      accent: true,
+    },
     {
       label: "Appeler",
       sub: INFO.phone,
@@ -52,41 +63,55 @@ export default function OrderSection({ onOrder }) {
             <span className="text-[#FF7A00] glow-orange-text">ITK FOOD.</span>
           </h2>
           <p className="mt-5 text-white/60 max-w-md leading-relaxed">
-            Pas d&apos;app, pas de friction. Un appel, un itinéraire, une story Snap —
-            ton repas est prêt en quelques minutes.
+            Site web, téléphone, Snap ou Insta — choisis ton canal préféré, on
+            gère le reste.
           </p>
           <button
-            onClick={onOrder}
+            onClick={openDrawer}
             data-testid="ordersection-cta"
             className="btn-orange mt-7 px-7 py-4 rounded-full font-display tracking-wider text-sm"
           >
-            Ouvrir les options
+            Commander via le site
           </button>
         </div>
 
-        <div className="lg:col-span-7 grid grid-cols-2 gap-3 sm:gap-4">
+        <div className="lg:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {tiles.map((t) => {
             const Icon = t.Icon;
+            const isAccent = !!t.accent;
+            const Tag = t.href ? "a" : "button";
+            const tagProps = t.href
+              ? {
+                  href: t.href,
+                  target: t.target,
+                  rel: t.target === "_blank" ? "noopener noreferrer" : undefined,
+                }
+              : { type: "button", onClick: t.onClick };
             return (
-              <a
+              <Tag
                 key={t.label}
-                href={t.href}
-                target={t.target}
-                rel={t.target === "_blank" ? "noopener noreferrer" : undefined}
+                {...tagProps}
                 data-testid={t.testid}
-                className="reveal group relative overflow-hidden p-6 sm:p-7 rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] hover:border-[#FF7A00]/60 hover:bg-[#161616] transition"
+                className={`reveal group relative overflow-hidden p-6 sm:p-7 rounded-3xl text-left border transition ${
+                  isAccent
+                    ? "border-[#FF7A00] bg-[#FF7A00]/12 hover:bg-[#FF7A00]/20"
+                    : "border-[#1a1a1a] bg-[#0e0e0e] hover:border-[#FF7A00]/60 hover:bg-[#161616]"
+                }`}
               >
                 <div className="absolute -bottom-10 -right-10 h-36 w-36 rounded-full bg-[#FF7A00]/0 group-hover:bg-[#FF7A00]/10 blur-2xl transition" />
                 <div className="relative flex flex-col gap-6 sm:gap-8 h-full justify-between min-h-[140px]">
-                  <Icon size={26} className="text-[#FF7A00]" />
+                  <Icon
+                    size={26}
+                    className={isAccent ? "text-[#FF7A00]" : "text-[#FF7A00]"}
+                  />
                   <div>
                     <p className="font-display text-2xl sm:text-3xl leading-none">
                       {t.label}
                     </p>
-                    <p className="text-xs text-white/45 mt-2 truncate">{t.sub}</p>
+                    <p className="text-xs text-white/55 mt-2 truncate">{t.sub}</p>
                   </div>
                 </div>
-              </a>
+              </Tag>
             );
           })}
         </div>

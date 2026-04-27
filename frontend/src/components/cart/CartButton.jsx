@@ -2,7 +2,8 @@ import { ShoppingBag } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { formatPrice } from "../../utils/cart";
 
-export default function CartButton() {
+// Bouton panier inline (utilisable dans la navbar). N'apparaît que si le panier contient au moins 1 article.
+export default function CartButton({ className = "", showTotal = true }) {
   const { count, total, openDrawer } = useCart();
 
   if (count === 0) return null;
@@ -12,17 +13,19 @@ export default function CartButton() {
       onClick={openDrawer}
       data-testid="cart-btn"
       aria-label={`Panier — ${count} articles`}
-      className="fixed z-40 bottom-5 right-5 sm:bottom-6 sm:right-6 group flex items-center gap-3 px-5 sm:px-6 py-3.5 rounded-full btn-orange glow-soft shadow-[0_18px_40px_-10px_rgba(255,122,0,0.6)]"
+      className={`group flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-[#FF7A00] bg-[#FF7A00]/10 hover:bg-[#FF7A00]/20 text-white transition ${className}`}
     >
       <span className="relative">
-        <ShoppingBag size={18} strokeWidth={2.4} />
-        <span className="absolute -top-2 -right-2.5 h-5 min-w-[20px] px-1 grid place-items-center rounded-full bg-black text-[#FF7A00] text-[10px] font-display border border-[#FF7A00]">
+        <ShoppingBag size={16} strokeWidth={2.4} className="text-[#FF7A00]" />
+        <span className="absolute -top-2 -right-2.5 h-4 min-w-[16px] px-1 grid place-items-center rounded-full bg-[#FF7A00] text-black text-[9px] font-display">
           {count}
         </span>
       </span>
-      <span className="font-display tracking-wider text-sm">
-        {formatPrice(total)}
-      </span>
+      {showTotal && (
+        <span className="font-display tracking-wider text-[11px] sm:text-xs hidden sm:inline">
+          {formatPrice(total)}
+        </span>
+      )}
     </button>
   );
 }

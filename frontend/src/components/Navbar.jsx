@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { INFO } from "../data/menu";
+import CartButton from "./cart/CartButton";
 
 export default function Navbar({ onOrder }) {
   const [scrolled, setScrolled] = useState(false);
@@ -75,6 +76,7 @@ export default function Navbar({ onOrder }) {
           >
             <Phone size={14} /> {INFO.phone}
           </a>
+          <CartButton />
           <button
             onClick={onOrder}
             data-testid="navbar-order-btn"
@@ -84,14 +86,17 @@ export default function Navbar({ onOrder }) {
           </button>
         </div>
 
-        <button
-          className="md:hidden h-10 w-10 grid place-items-center rounded-lg border border-[#1f1f1f]"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-          data-testid="mobile-menu-toggle"
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <CartButton showTotal={false} />
+          <button
+            className="h-10 w-10 grid place-items-center rounded-lg border border-[#1f1f1f]"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+            data-testid="mobile-menu-toggle"
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile drawer */}
