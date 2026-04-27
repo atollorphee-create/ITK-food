@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,18 +14,37 @@ import OrderSection from "./components/OrderSection";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
 import OrderModal from "./components/OrderModal";
-import StickyOrder from "./components/StickyOrder";
 import Watermark from "./components/Watermark";
 import useReveal from "./hooks/useReveal";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import { CartProvider, useCart } from "./context/CartContext";
+import CartButton from "./components/cart/CartButton";
+import CartDrawer from "./components/cart/CartDrawer";
+import ProductOptionsModal from "./components/cart/ProductOptionsModal";
 
-function Home() {
+function CartLayer() {
+  // Mounted globally so cart works on every page
+  return (
+    <>
+      <CartButton />
+      <CartDrawer />
+      <ProductOptionsModal />
+    </>
+  );
+}
+
+function HomeContent() {
   const [orderOpen, setOrderOpen] = useState(false);
   const ref = useReveal();
-  const openOrder = () => setOrderOpen(true);
-  const closeOrder = () => setOrderOpen(false);
+  const { openDrawer } = useCart();
+  // CTA "Commander" globaux ouvrent le panier (commande directe)
+  const openOrder = () => {
+    // si panier vide → ouvre la modal classique réseaux/téléphone
+    // sinon → ouvre le panier
+    setOrderOpen(true);
+  };
 
   return (
     <div className="App" ref={ref}>
@@ -32,30 +52,44 @@ function Home() {
       <Hero onOrder={openOrder} />
       <Marquee />
       <Featured onOrder={openOrder} />
-      <BoxDeal onOrder={openOrder} />
+      <BoxDeal />
       <Menu />
       <Gallery />
       <Reviews />
       <OrderSection onOrder={openOrder} />
       <Info />
       <Footer />
-      <OrderModal open={orderOpen} onClose={closeOrder} />
-      <StickyOrder onOrder={openOrder} />
+      <OrderModal open={orderOpen} onClose={() => setOrderOpen(false)} />
     </div>
   );
 }
 
 function App() {
   return (
-    <BrowserRouter>
-      <Watermark />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/mentions-legales" element={<Legal />} />
-        <Route path="/confidentialite" element={<Privacy />} />
-        <Route path="/cgv" element={<Terms />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <Toaster
+        position="top-center"
+        theme="dark"
+        toastOptions={{
+          style: {
+            background: "#0e0e0e",
+            border: "1px solid #1f1f1f",
+            color: "white",
+          },
+          className: "font-display",
+        }}
+      />
+      <BrowserRouter>
+        <Watermark />
+        <Routes>
+          <Route path="/" element={<HomeContent />} />
+          <Route path="/mentions-legales" element={<Legal />} />
+          <Route path="/confidentialite" element={<Privacy />} />
+          <Route path="/cgv" element={<Terms />} />
+        </Routes>
+        <CartLayer />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

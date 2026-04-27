@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { FEATURED } from "../data/menu";
+import AddButton from "./cart/AddButton";
 
 export default function Featured({ onOrder }) {
   return (
@@ -57,9 +58,12 @@ export default function Featured({ onOrder }) {
                 data-testid={`featured-order-${p.id}`}
                 className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/80 hover:text-[#FF7A00] transition group"
               >
-                Commander
+                Voir options
                 <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
+              <div className="mt-4">
+                <AddButton product={p} catId={p.catId} label="Ajouter au panier" />
+              </div>
             </div>
           </article>
         ))}

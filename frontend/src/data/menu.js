@@ -4,6 +4,7 @@
 export const FEATURED = [
   {
     id: "original",
+    catId: "burgers",
     name: "L'Original",
     price: "6,90€",
     desc: "2 steaks smashés, sauce smash, double cheddar, oignons confits.",
@@ -12,6 +13,7 @@ export const FEATURED = [
   },
   {
     id: "smoky",
+    catId: "burgers",
     name: "Le Smoky",
     price: "8,50€",
     desc: "2 steaks, bacon, raclette fondue, sauce smoky, rosty croustillant.",
@@ -20,14 +22,16 @@ export const FEATURED = [
   },
   {
     id: "tacos",
+    catId: "tacos",
     name: "Tacos ITK",
-    price: "dès 6,50€",
+    price: "6,50€",
     desc: "Galette grillée, frites, sauce fromagère, viandes au choix.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/2e2zours_tacos.png",
     tag: "Best-seller",
   },
   {
     id: "box-itk",
+    catId: "divers",
     name: "Box ITK",
     price: "10€",
     desc: "2 mini cheese + frites cheddar oignons + tenders ou wings.",
@@ -36,6 +40,7 @@ export const FEATURED = [
   },
   {
     id: "poutine",
+    catId: "canadiennes",
     name: "Poutine ITK",
     price: "6,90€",
     desc: "Frites, viande au choix, cheddar, oignons frits, mozza gratinée.",
@@ -190,6 +195,8 @@ export const INFO = {
   address: "6 rue de Verdun, 57190 Florange",
   phone: "09 54 53 37 57",
   phoneRaw: "+33954533757",
+  // WhatsApp pro — modifie ce numéro (format international sans + ni espaces)
+  whatsappNumber: "33954533757",
   mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=6+rue+de+Verdun+57190+Florange",
   snapchatUrl: "https://www.snapchat.com/@itk-food",
   instagramUrl: "https://www.instagram.com/itk.food57/",

@@ -12,6 +12,7 @@ import {
   Drumstick,
 } from "lucide-react";
 import { CATEGORIES } from "../data/menu";
+import AddButton from "./cart/AddButton";
 
 const ICONS = {
   beef: Beef,
@@ -24,7 +25,8 @@ const ICONS = {
   child: Baby,
 };
 
-function ItemCard({ name, price, desc, i }) {
+function ItemCard({ name, price, desc, i, catId, productId }) {
+  const product = { id: productId || name, name, price, desc };
   return (
     <article
       className="product-card group relative p-5 sm:p-6 rounded-[20px] border border-[#1a1a1a] bg-[#0e0e0e] opacity-0 animate-[pop-in_0.4s_ease-out_forwards]"
@@ -42,10 +44,9 @@ function ItemCard({ name, price, desc, i }) {
       {desc && (
         <p className="mt-3 text-sm text-white/55 leading-relaxed">{desc}</p>
       )}
-      <ArrowUpRight
-        size={16}
-        className="absolute bottom-5 right-5 text-white/20 group-hover:text-[#FF7A00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
-      />
+      <div className="mt-4">
+        <AddButton product={product} catId={catId} />
+      </div>
     </article>
   );
 }
@@ -121,6 +122,12 @@ function PoutineBuilder({ poutine }) {
 }
 
 function KidsMenu({ kids }) {
+  const product = {
+    id: "menu-enfant",
+    name: "Menu Enfant",
+    price: kids.price,
+    desc: `Au choix : ${kids.choices.join(" ou ")}. Inclus : ${kids.includes.join(", ")}.`,
+  };
   return (
     <div className="grid lg:grid-cols-3 gap-3 sm:gap-4 opacity-0 animate-[pop-in_0.4s_ease-out_forwards]">
       {/* Featured price card */}
@@ -134,6 +141,9 @@ function KidsMenu({ kids }) {
           <p className="mt-2 text-xs text-white/60 uppercase tracking-[0.22em]">
             Le menu complet
           </p>
+          <div className="mt-5">
+            <AddButton product={product} catId="menu-enfant" label="Ajouter le menu" />
+          </div>
         </div>
       </div>
 
@@ -249,7 +259,7 @@ export default function Menu() {
           data-testid={`menu-list-${active}`}
         >
           {cat.items.map((it, i) => (
-            <ItemCard key={it.name} {...it} i={i} />
+            <ItemCard key={it.name} {...it} i={i} catId={cat.id} productId={it.name} />
           ))}
         </div>
       )}
