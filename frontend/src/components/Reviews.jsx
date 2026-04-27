@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import Marquee from "react-fast-marquee";
 import { REVIEWS, RATING } from "../data/reviews";
 
 function Stars({ n = 5 }) {
