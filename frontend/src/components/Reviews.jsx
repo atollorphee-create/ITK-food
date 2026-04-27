@@ -160,11 +160,11 @@ export default function Reviews() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent" />
       </div>
 
-      {/* Marquee row 2 — right (opposite direction) */}
+      {/* Marquee row 2 — same direction, different speed (no jump back) */}
       <div className="reveal relative mt-3" style={{ transitionDelay: "200ms" }}>
         <div
           className="flex animate-marquee will-change-transform py-2"
-          style={{ animationDirection: "reverse", animationDuration: "10s" }}
+          style={{ animationDuration: "12s" }}
         >
           {[...row2, ...row2].map((r, i) => (
             <ReviewCard key={`r2-${i}`} r={r} />
