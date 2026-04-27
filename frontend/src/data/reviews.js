@@ -129,6 +129,87 @@ export const REVIEWS = [
     text:
       "C'est très bon, on a bien mangé. Allez, c'est incroyable. Cuisine : 5/5.",
   },
+  {
+    name: "YaIlh NO",
+    sub: "Local Guide · 21 avis · 1 photo",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Vraiment bon et frais. Le fait que tout soit fait maison des frites à la viande fraîche rend les prix d'autant plus attractifs. Super qualitatif, super bon, accueil au top et service rapide.",
+  },
+  {
+    name: "Samira MATMAT",
+    sub: "Local Guide · 60 avis · 25 photos",
+    when: "il y a 8 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Vraiment excellent. Nous avons goûté la box et franchement prix très raisonnable, les burgers sont délicieux. Très belle découverte.",
+  },
+  {
+    name: "shay",
+    sub: "1 avis",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Box à 10€ ultra complète, y'a tout ce qu'il faut dedans. La viande est bien cuite, les frites sont bonnes, portion généreuse. Service rapide, c'est propre, l'équipe est sympa. Foncez, c'est incroyable.",
+  },
+  {
+    name: "Nicolas Sandrin",
+    sub: "Local Guide · 58 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Excellent !! J'ai pris plusieurs produits de la carte, c'est un sans faute. Vraiment de la qualité, prix très attractif par rapport à la concurrence. Très bonne expérience 👍",
+  },
+  {
+    name: "Feryels Cake",
+    sub: "Local Guide · 23 avis · 10 photos",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Waaw que dire ? Super accueil. Tout est frais, ça se ressent dans le goût. Les frites sont incroyables avec la sauce ITK, portions très généreuses. Un sans faute, ne changez rien !",
+  },
+  {
+    name: "Nabil Many",
+    sub: "3 avis",
+    when: "il y a 8 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Rapport qualité-prix défiant toute concurrence, l'accueil chaleureux. Les sandwichs sont généreux et délicieux ! Allez vous régaler.",
+  },
+  {
+    name: "Amin Hamida",
+    sub: "2 avis",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Mention spéciale à la poutine qui, dès la première bouchée, m'a donné l'impression d'être avec les Élans et les Castors au fin fond de Montréal. Merci pour ce moment de transcendance spirituelle.",
+  },
+  {
+    name: "Nassim Idris",
+    sub: "Local Guide · 16 avis · 3 photos",
+    when: "il y a 9 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Très bon snack, très bon rapport qualité-prix. Les smash burgers sont particulièrement bons. Et pour ceux qui ne le savent pas, ils servent même un excellent Bissap.",
+  },
+  {
+    name: "Dendaln",
+    sub: "1 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Un snack au top ! Produits frais, portions généreuses, saveurs au rendez-vous. Accueil chaleureux et service rapide même en période de rush. Je recommande les yeux fermés.",
+  },
 ];
 
 export const RATING = {
