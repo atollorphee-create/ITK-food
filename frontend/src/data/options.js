@@ -37,6 +37,20 @@ export const BOX_CHOICES = ["2 Tenders", "3 Crispy Wings"];
 // Choix Menu Enfant
 export const KIDS_CHOICES = ["Mini Cheese", "5 Nuggets"];
 
+// Boissons proposées en option menu
+export const DRINKS = [
+  "Coca-Cola",
+  "Coca Zero",
+  "Fanta Orange",
+  "Sprite",
+  "Oasis",
+  "Ice Tea",
+  "Eau plate",
+];
+
+// Coût "Faire un menu" (frites + boisson)
+export const MENU_UPGRADE_PRICE = 3.5;
+
 // Note légale
 export const ORDER_DISCLAIMER =
   "Commande à confirmer par ITK FOOD. Prix indicatifs.";

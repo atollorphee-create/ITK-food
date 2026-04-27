@@ -19,6 +19,8 @@ function ItemDetails({ item }) {
   }
   if (kind === "box" && config.choice) lines.push(`Au choix : ${config.choice}`);
   if (kind === "kids" && config.choice) lines.push(`Au choix : ${config.choice}`);
+  if (config.menu)
+    lines.push(`Menu (frites + ${config.menu.drink}) +${config.menu.upgradePrice.toString().replace(".", ",")}€`);
   if (config.removed?.length) lines.push(`Sans : ${config.removed.join(", ")}`);
   if (config.supplements?.length)
     lines.push(`Suppléments : ${config.supplements.map((s) => s.label).join(", ")}`);

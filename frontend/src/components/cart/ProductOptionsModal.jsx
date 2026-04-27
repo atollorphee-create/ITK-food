@@ -8,6 +8,8 @@ import {
   SAUCES,
   BOX_CHOICES,
   KIDS_CHOICES,
+  DRINKS,
+  MENU_UPGRADE_PRICE,
 } from "../../data/options";
 import { parsePrice, parseIngredients, formatPrice } from "../../utils/cart";
 
@@ -55,6 +57,8 @@ export default function ProductOptionsModal() {
   const [extraMeat, setExtraMeat] = useState(false);
   const [boxChoice, setBoxChoice] = useState(BOX_CHOICES[0]);
   const [kidsChoice, setKidsChoice] = useState(KIDS_CHOICES[0]);
+  const [makeMenu, setMakeMenu] = useState(false);
+  const [drink, setDrink] = useState(DRINKS[0]);
   const [note, setNote] = useState("");
   const [qty, setQty] = useState(1);
 
@@ -70,6 +74,8 @@ export default function ProductOptionsModal() {
       setExtraMeat(false);
       setBoxChoice(BOX_CHOICES[0]);
       setKidsChoice(KIDS_CHOICES[0]);
+      setMakeMenu(false);
+      setDrink(DRINKS[0]);
       setNote("");
       setQty(1);
     }
@@ -99,6 +105,9 @@ export default function ProductOptionsModal() {
   if (kind === "tacos") unitPrice = TACOS_PRICES[size];
   if (kind === "poutine" && extraMeat) unitPrice = basePrice + 1.5;
   unitPrice += supps.reduce((acc, s) => acc + s.price, 0);
+  // "Faire un menu" : frites + boisson +3,50€ (uniquement burgers/sandwichs/classiques)
+  const menuAvailable = kind === "burger";
+  if (menuAvailable && makeMenu) unitPrice += MENU_UPGRADE_PRICE;
 
   // Validation
   const valid = (() => {
@@ -120,6 +129,9 @@ export default function ProductOptionsModal() {
       ...(kind === "kids" && { choice: kidsChoice }),
       ...(kind === "burger" &&
         removed.length > 0 && { removed }),
+      ...(menuAvailable && makeMenu && {
+        menu: { drink, upgradePrice: MENU_UPGRADE_PRICE },
+      }),
       ...(supps.length > 0 && { supplements: supps }),
       ...(note.trim() && { note: note.trim() }),
     };
@@ -326,6 +338,53 @@ export default function ProductOptionsModal() {
                   );
                 })}
               </div>
+            </Section>
+          )}
+
+          {/* Faire un menu (frites + boisson) — burgers / sandwichs / classiques */}
+          {menuAvailable && (
+            <Section title="Faire un menu" hint={`+${formatPrice(MENU_UPGRADE_PRICE)}`}>
+              <button
+                type="button"
+                onClick={() => setMakeMenu(!makeMenu)}
+                className={`w-full flex items-center justify-between gap-3 p-4 rounded-2xl border transition ${
+                  makeMenu
+                    ? "border-[#FF7A00] bg-[#FF7A00]/10"
+                    : "border-[#1f1f1f] bg-[#0e0e0e] hover:border-[#FF7A00]/50"
+                }`}
+              >
+                <span className="flex items-center gap-3">
+                  <span
+                    className={`h-5 w-5 rounded-md border-2 grid place-items-center transition ${
+                      makeMenu ? "border-[#FF7A00] bg-[#FF7A00]" : "border-[#2a2a2a]"
+                    }`}
+                  >
+                    {makeMenu && <Plus size={12} className="text-black rotate-45" strokeWidth={3} />}
+                  </span>
+                  <span className="text-left">
+                    <span className="block font-display text-base">Frites + Boisson</span>
+                    <span className="block text-[11px] text-white/50">Ajoute frites maison & 1 boisson 33cl</span>
+                  </span>
+                </span>
+                <span className="font-display text-base text-[#FF7A00]">
+                  +{formatPrice(MENU_UPGRADE_PRICE)}
+                </span>
+              </button>
+
+              {makeMenu && (
+                <div className="mt-3">
+                  <p className="text-[11px] text-white/45 uppercase tracking-[0.18em] mb-2">
+                    Boisson au choix
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {DRINKS.map((d) => (
+                      <Chip key={d} mini active={drink === d} onClick={() => setDrink(d)}>
+                        {d}
+                      </Chip>
+                    ))}
+                  </div>
+                </div>
+              )}
             </Section>
           )}
 
