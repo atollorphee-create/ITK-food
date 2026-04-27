@@ -48,7 +48,7 @@ export default function Navbar({ onOrder }) {
           <img
             src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ny6qfhq1_ChatGPT%20Image%2026%20avr.%202026%2C%2022_31_58.png"
             alt="Le snack du peuple, fait par le peuple !"
-            className="h-9 sm:h-16 lg:h-20 w-auto select-none"
+            className="h-12 sm:h-16 lg:h-20 w-auto select-none"
             draggable="false"
           />
           <span className="sr-only">ITK FOOD — Le snack du peuple, fait par le peuple</span>

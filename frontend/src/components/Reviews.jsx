@@ -149,7 +149,7 @@ export default function Reviews() {
       <div className="reveal relative" style={{ transitionDelay: "120ms" }}>
         <div
           className="flex animate-marquee will-change-transform py-2"
-          style={{ animationDuration: "30s" }}
+          style={{ animationDuration: "22s" }}
         >
           {[...row1, ...row1].map((r, i) => (
             <ReviewCard key={`r1-${i}`} r={r} />
@@ -164,7 +164,7 @@ export default function Reviews() {
       <div className="reveal relative mt-3" style={{ transitionDelay: "200ms" }}>
         <div
           className="flex animate-marquee will-change-transform py-2"
-          style={{ animationDirection: "reverse", animationDuration: "32s" }}
+          style={{ animationDirection: "reverse", animationDuration: "24s" }}
         >
           {[...row2, ...row2].map((r, i) => (
             <ReviewCard key={`r2-${i}`} r={r} />
