@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Star, Quote } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { REVIEWS, RATING } from "../data/reviews";
@@ -99,6 +100,21 @@ function GoogleG({ size = 22 }) {
 }
 
 export default function Reviews() {
+  // Vitesse adaptée mobile / desktop (px/s)
+  const [speed1, setSpeed1] = useState(50);
+  const [speed2, setSpeed2] = useState(42);
+
+  useEffect(() => {
+    const apply = () => {
+      const isMobile = window.innerWidth < 768;
+      setSpeed1(isMobile ? 60 : 28);
+      setSpeed2(isMobile ? 50 : 24);
+    };
+    apply();
+    window.addEventListener("resize", apply);
+    return () => window.removeEventListener("resize", apply);
+  }, []);
+
   // Split reviews in two rows for opposite-direction marquee
   const half = Math.ceil(REVIEWS.length / 2);
   const row1 = REVIEWS.slice(0, half);
@@ -146,33 +162,35 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* Marquee row 1 — left */}
-      <div className="reveal relative" style={{ transitionDelay: "120ms" }}>
-        <div
-          className="flex animate-marquee will-change-transform py-2"
-          style={{ animationDuration: "8s" }}
+      {/* Marquee row 1 — left, seamless via react-fast-marquee */}
+      <div className="reveal" style={{ transitionDelay: "120ms" }}>
+        <Marquee
+          speed={speed1}
+          gradient
+          gradientColor="#050505"
+          gradientWidth={90}
+          pauseOnHover
         >
-          {[...row1, ...row1].map((r, i) => (
+          {row1.map((r, i) => (
             <ReviewCard key={`r1-${i}`} r={r} />
           ))}
-        </div>
-        {/* edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent" />
+        </Marquee>
       </div>
 
-      {/* Marquee row 2 — opposite direction, seamless loop */}
-      <div className="reveal relative mt-3" style={{ transitionDelay: "200ms" }}>
-        <div
-          className="flex animate-marquee-rtl will-change-transform py-2"
-          style={{ animationDuration: "10s" }}
+      {/* Marquee row 2 — opposite direction, seamless */}
+      <div className="reveal mt-3" style={{ transitionDelay: "200ms" }}>
+        <Marquee
+          speed={speed2}
+          direction="right"
+          gradient
+          gradientColor="#050505"
+          gradientWidth={90}
+          pauseOnHover
         >
-          {[...row2, ...row2].map((r, i) => (
+          {row2.map((r, i) => (
             <ReviewCard key={`r2-${i}`} r={r} />
           ))}
-        </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent" />
+        </Marquee>
       </div>
 
       <p className="text-center text-xs text-white/40 mt-10 tracking-[0.22em] uppercase">
