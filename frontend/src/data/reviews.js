@@ -210,6 +210,186 @@ export const REVIEWS = [
     text:
       "Un snack au top ! Produits frais, portions généreuses, saveurs au rendez-vous. Accueil chaleureux et service rapide même en période de rush. Je recommande les yeux fermés.",
   },
+  {
+    name: "Adem Achab",
+    sub: "3 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Une tuerie ! Je m'attendais à un fast-food classique, j'ai été super surpris. Burgers généreux, viande bien cuite et savoureuse.",
+  },
+  {
+    name: "antoine loutrel",
+    sub: "7 avis · 4 photos",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Super accueil, le tacos était très bon, les frites excellentes et la sauce fromagère faite maison est une tuerie. Je recommande.",
+  },
+  {
+    name: "Dalhia",
+    sub: "7 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Super découverte. Tout était hyper bon ! Service rapide malgré le monde, personnel agréable et généreux. Je recommande +++.",
+  },
+  {
+    name: "Adur Adur",
+    sub: "1 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Foncez les yeux fermés ! Accueil chaleureux, personnel sérieux, produits 100% frais et savoureux.",
+  },
+  {
+    name: "Rowaid Mekroud",
+    sub: "1 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Un fast-food différent des classiques. Choix varié, prix abordables, qualité du service et de la nourriture. Je recommande vivement.",
+  },
+  {
+    name: "Arnaud",
+    sub: "Local Guide · 14 avis · 3 photos",
+    when: "il y a 9 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Je ne mets pas souvent d'avis mais là... Poutine excellente, burger goûteux. Bloqué chez Arcelor, livré en 20 min bien chaud — que demander de plus.",
+  },
+  {
+    name: "Ibtissem Blnr",
+    sub: "3 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Très bon accueil, super sympa et rapide. Très bon, on sent bien les produits frais. Je recommande fortement.",
+  },
+  {
+    name: "Chahinez Maiche",
+    sub: "6 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Commande au top, très très bon. Nourriture nickel, propre, personnel super gentil et à l'écoute. C'est devenu mon préféré.",
+  },
+  {
+    name: "Anthony Winkel",
+    sub: "5 avis",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Un très bon endroit à Florange qu'il convient d'encourager. Un travail sérieux, des personnes sympas. N'hésitez pas.",
+  },
+  {
+    name: "Maera Omichessan",
+    sub: "6 avis · 1 photo",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Ambiance cool et chaleureuse. Personnel à l'écoute et très gentil. Côté nourriture RAS — miam miam ! Si vous êtes à Florange, faites un tour.",
+  },
+  {
+    name: "Lina Doumi",
+    sub: "1 avis",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Excellent service. La nourriture était superbe. C'est chaleureux. Je recommande vivement.",
+  },
+  {
+    name: "Thomas G.",
+    sub: "5 avis",
+    when: "il y a 10 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Top, très bon snack, mention spéciale pour le sandwich DZ ! Très bon rapport qualité/prix 👍",
+  },
+  {
+    name: "Ababsa Zyed",
+    sub: "2 avis",
+    when: "il y a 9 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Service rapide et de qualité, accueil chaleureux, personnel très serviable. Je recommande fortement !",
+  },
+  {
+    name: "E B",
+    sub: "3 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Fast-food de qualité avec un très bon rapport qualité-prix. Accueil chaleureux et on y mange très bien. Je recommande et je reviendrai !",
+  },
+  {
+    name: "Yassine Esposito",
+    sub: "4 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Enfin un snack qui respecte ses clients avec une nourriture aussi bonne ! Clairement le meilleur SNACK DE FLORANGE, y'a pas photo.",
+  },
+  {
+    name: "Leroy Sterling",
+    sub: "1 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Je recommande fortement, les tacos sont très bons, la sauce fromagère est top. Ça faisait longtemps que je n'avais pas mangé aussi bien !",
+  },
+  {
+    name: "Adel Eddaidj",
+    sub: "6 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Accueil chaleureux, nourriture fraîche et d'excellente qualité avec des portions très généreuses.",
+  },
+  {
+    name: "matthieu brumont",
+    sub: "5 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "J'ai vraiment bien aimé le smash burger sauce fromagère. Rien à voir avec ce qu'il y a sur le marché — tout est frais et ça se sent 👍",
+  },
+  {
+    name: "Yasmine Bouaita",
+    sub: "2 avis",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Super expérience ce soir chez ITK Food. Accueil, service et surtout une cuisine plus qu'excellente. Je reviendrai sans hésiter.",
+  },
+  {
+    name: "Nøxzø",
+    sub: "5 avis · 1 photo",
+    when: "il y a 11 mois",
+    rating: 5,
+    avatar: null,
+    text:
+      "Service très accueillant et aimable, prix très bas pour une haute qualité. Le personnel s'assure que le client est satisfait. Je recommande sans hésitation.",
+  },
 ];
 
 export const RATING = {
