@@ -17,7 +17,7 @@ export const FEATURED = [
     name: "Le Smoky",
     price: "8,50€",
     desc: "2 steaks, bacon, raclette fondue, sauce smoky, rosty croustillant.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/sf7azvb8_le%20smocky.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/tk0jnbwd_ChatGPT%20Image%2028%20avr.%202026%2C%2022_26_49.png",
     tag: "Premium",
   },
   {
