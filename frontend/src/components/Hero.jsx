@@ -25,11 +25,11 @@ export default function Hero({ onOrder }) {
         <div className="absolute inset-0 dot-grid opacity-25" />
 
         {/* Drifting light layers + light sweep — bien visibles */}
-        <div className="hero-light-1 absolute -bottom-20 -left-20 h-[600px] w-[600px] rounded-full bg-[#FF7A00]/55 blur-[100px] will-change-transform" />
-        <div className="hero-light-2 absolute -top-32 right-1/4 h-[520px] w-[520px] rounded-full bg-[#FF7A00]/40 blur-[100px] will-change-transform" />
+        <div className="hero-light-1 absolute -bottom-20 -left-20 h-[600px] w-[600px] rounded-full bg-[#FF7A00]/25 sm:bg-[#FF7A00]/55 blur-[100px] will-change-transform" />
+        <div className="hero-light-2 absolute -top-32 right-1/4 h-[520px] w-[520px] rounded-full bg-[#FF7A00]/20 sm:bg-[#FF7A00]/40 blur-[100px] will-change-transform" />
 
         {/* Sweep de lumière diagonal */}
-        <div className="hero-sweep absolute top-0 -left-1/2 w-[40%] h-full bg-gradient-to-r from-transparent via-[#FF7A00]/25 to-transparent blur-2xl" />
+        <div className="hero-sweep absolute top-0 -left-1/2 w-[40%] h-full bg-gradient-to-r from-transparent via-[#FF7A00]/10 sm:via-[#FF7A00]/25 to-transparent blur-2xl" />
 
         {/* Grain texture overlay */}
         <div
