@@ -27,30 +27,9 @@ export default function Hero({ onOrder }) {
         {/* Drifting light layers + light sweep — bien visibles */}
         <div className="hero-light-1 absolute -bottom-20 -left-20 h-[600px] w-[600px] rounded-full bg-[#FF7A00]/55 blur-[100px] will-change-transform" />
         <div className="hero-light-2 absolute -top-32 right-1/4 h-[520px] w-[520px] rounded-full bg-[#FF7A00]/40 blur-[100px] will-change-transform" />
-        <div className="hero-pulse absolute top-1/3 right-1/2 h-[340px] w-[340px] rounded-full bg-[#FF7A00]/35 blur-[80px] will-change-transform" />
 
         {/* Sweep de lumière diagonal */}
         <div className="hero-sweep absolute top-0 -left-1/2 w-[40%] h-full bg-gradient-to-r from-transparent via-[#FF7A00]/25 to-transparent blur-2xl" />
-
-        {/* Steam wisps — bien visibles au-dessus du burger */}
-        <div className="hidden sm:block">
-          <span
-            className="vapor"
-            style={{ right: "30%", animation: "vapor-rise 4s ease-in-out infinite", animationDelay: "0s" }}
-          />
-          <span
-            className="vapor"
-            style={{ right: "24%", animation: "vapor-rise 4.6s ease-in-out infinite", animationDelay: "1.2s" }}
-          />
-          <span
-            className="vapor"
-            style={{ right: "36%", animation: "vapor-rise 5.2s ease-in-out infinite", animationDelay: "2.4s" }}
-          />
-          <span
-            className="vapor"
-            style={{ right: "20%", animation: "vapor-rise 4.4s ease-in-out infinite", animationDelay: "3.6s" }}
-          />
-        </div>
 
         {/* Grain texture overlay */}
         <div
