@@ -15,14 +15,16 @@ export default function Hero({ onOrder }) {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=2000&q=80"
-          alt="ITK Food smash burger"
-          className="absolute inset-0 w-full h-full object-cover opacity-55"
+          src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/b30kgkfr_ChatGPT%20Image%2028%20avr.%202026%2C%2022_08_24.png"
+          alt="ITK Food bacon cheese burger"
+          className="absolute inset-0 w-full h-full object-cover object-right opacity-90"
         />
-        <div className="absolute inset-0 hero-overlay" />
-        <div className="absolute inset-0 dot-grid opacity-40" />
+        {/* Strong gradient on the left for text readability, transparent on the right to keep the burger visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050505] to-transparent" />
+        <div className="absolute inset-0 dot-grid opacity-25" />
         <div className="absolute -bottom-20 -left-20 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/20 blur-[140px]" />
-        <div className="absolute -top-32 -right-20 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/12 blur-[140px]" />
+        <div className="absolute -top-32 right-1/4 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/12 blur-[140px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pt-28 pb-20">
