@@ -29,6 +29,7 @@ export default function Featured({ onOrder }) {
           <article
             key={p.id}
             data-testid={`featured-card-${p.id}`}
+            data-wisp={p.id === "smoky" ? "true" : undefined}
             className="product-card reveal relative overflow-hidden rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e]"
             style={{ transitionDelay: `${i * 80}ms` }}
           >
