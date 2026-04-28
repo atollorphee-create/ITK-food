@@ -79,7 +79,6 @@ function App() {
         }}
       />
       <BrowserRouter>
-        <Watermark />
         <Routes>
           <Route path="/" element={<HomeContent />} />
           <Route path="/mentions-legales" element={<Legal />} />
