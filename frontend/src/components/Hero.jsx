@@ -24,23 +24,24 @@ export default function Hero({ onOrder }) {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050505] to-transparent" />
         <div className="absolute inset-0 dot-grid opacity-25" />
 
-        {/* Drifting light layers — extrêmement subtil */}
-        <div className="hero-light-1 absolute -bottom-20 -left-20 h-[440px] w-[440px] rounded-full bg-[#FF7A00]/22 blur-[140px] will-change-transform" />
-        <div className="hero-light-2 absolute -top-32 right-1/4 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/14 blur-[140px] will-change-transform" />
+        {/* Drifting light layers — visibles mais lents */}
+        <div className="hero-light-1 absolute -bottom-20 -left-20 h-[520px] w-[520px] rounded-full bg-[#FF7A00]/35 blur-[120px] will-change-transform" />
+        <div className="hero-light-2 absolute -top-32 right-1/4 h-[460px] w-[460px] rounded-full bg-[#FF7A00]/25 blur-[120px] will-change-transform" />
+        <div className="hero-pulse absolute top-1/2 right-1/3 h-[300px] w-[300px] rounded-full bg-[#FF7A00]/20 blur-[100px] will-change-transform" />
 
-        {/* Steam wisps — montent doucement au-dessus du burger */}
+        {/* Steam wisps — visibles, montent au-dessus du burger */}
         <div className="hidden sm:block">
           <span
             className="vapor"
-            style={{ right: "32%", animation: "vapor-rise 7s ease-in-out infinite", animationDelay: "0s" }}
+            style={{ right: "32%", animation: "vapor-rise 5.5s ease-in-out infinite", animationDelay: "0s" }}
           />
           <span
             className="vapor"
-            style={{ right: "26%", animation: "vapor-rise 9s ease-in-out infinite", animationDelay: "2s" }}
+            style={{ right: "26%", animation: "vapor-rise 6.5s ease-in-out infinite", animationDelay: "1.6s" }}
           />
           <span
             className="vapor"
-            style={{ right: "38%", animation: "vapor-rise 8s ease-in-out infinite", animationDelay: "4.2s" }}
+            style={{ right: "38%", animation: "vapor-rise 7s ease-in-out infinite", animationDelay: "3.2s" }}
           />
         </div>
 
