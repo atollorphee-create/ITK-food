@@ -17,14 +17,41 @@ export default function Hero({ onOrder }) {
         <img
           src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/b30kgkfr_ChatGPT%20Image%2028%20avr.%202026%2C%2022_08_24.png"
           alt="ITK Food bacon cheese burger"
-          className="absolute inset-0 w-full h-full object-cover object-right opacity-90"
+          className="hero-image-anim absolute inset-0 w-full h-full object-cover object-right opacity-90 will-change-transform"
         />
         {/* Strong gradient on the left for text readability, transparent on the right to keep the burger visible */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050505] to-transparent" />
         <div className="absolute inset-0 dot-grid opacity-25" />
-        <div className="absolute -bottom-20 -left-20 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/20 blur-[140px]" />
-        <div className="absolute -top-32 right-1/4 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/12 blur-[140px]" />
+
+        {/* Drifting light layers — extrêmement subtil */}
+        <div className="hero-light-1 absolute -bottom-20 -left-20 h-[440px] w-[440px] rounded-full bg-[#FF7A00]/22 blur-[140px] will-change-transform" />
+        <div className="hero-light-2 absolute -top-32 right-1/4 h-[420px] w-[420px] rounded-full bg-[#FF7A00]/14 blur-[140px] will-change-transform" />
+
+        {/* Steam wisps — montent doucement au-dessus du burger */}
+        <div className="hidden sm:block">
+          <span
+            className="vapor"
+            style={{ right: "32%", animation: "vapor-rise 7s ease-in-out infinite", animationDelay: "0s" }}
+          />
+          <span
+            className="vapor"
+            style={{ right: "26%", animation: "vapor-rise 9s ease-in-out infinite", animationDelay: "2s" }}
+          />
+          <span
+            className="vapor"
+            style={{ right: "38%", animation: "vapor-rise 8s ease-in-out infinite", animationDelay: "4.2s" }}
+          />
+        </div>
+
+        {/* Grain texture overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+          }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pt-28 pb-20">

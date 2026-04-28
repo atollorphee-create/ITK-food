@@ -259,9 +259,55 @@ body {
     -webkit-backdrop-filter: blur(18px);
 }
 
-/* Hide scrollbar on horizontal lists if any */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Hero subtle ambient animations */
+@keyframes hero-zoom {
+    0%, 100% { transform: scale(1.02) translateX(0); }
+    50% { transform: scale(1.06) translateX(-1.2%); }
+}
+@keyframes hero-light-drift {
+    0% { transform: translate3d(-12%, -6%, 0); opacity: 0.55; }
+    50% { transform: translate3d(8%, 4%, 0); opacity: 0.85; }
+    100% { transform: translate3d(-12%, -6%, 0); opacity: 0.55; }
+}
+@keyframes hero-light-counter {
+    0% { transform: translate3d(10%, 8%, 0); opacity: 0.4; }
+    50% { transform: translate3d(-6%, -4%, 0); opacity: 0.7; }
+    100% { transform: translate3d(10%, 8%, 0); opacity: 0.4; }
+}
+@keyframes vapor-rise {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    20% { opacity: 0.18; }
+    50% { transform: translateY(-160px) translateX(8px) scale(1.4); opacity: 0.13; }
+    80% { opacity: 0.05; }
+    100% { transform: translateY(-320px) translateX(-6px) scale(1.8); opacity: 0; }
+}
+
+.hero-image-anim {
+    animation: hero-zoom 32s ease-in-out infinite;
+}
+.hero-light-1 {
+    animation: hero-light-drift 22s ease-in-out infinite;
+}
+.hero-light-2 {
+    animation: hero-light-counter 28s ease-in-out infinite;
+}
+.vapor {
+    position: absolute;
+    bottom: 22%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(18px);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-image-anim, .hero-light-1, .hero-light-2, .vapor {
+        animation: none !important;
+    }
+}
 
 /* VYNTRAWEB filigrane — diagonal repeating watermark across whole site */
 .vyntra-watermark {
