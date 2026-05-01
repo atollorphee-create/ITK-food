@@ -48,7 +48,7 @@ function FeaturedPanel({ item, catId }) {
   return (
     <div key={key} className="animate-[pop-in_0.5s_ease-out_forwards]">
       <div className="relative overflow-hidden rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e]">
-        {/* Image 3:4 ratio */}
+        {/* Image 3:4 ratio — clean, sans superpositions de texte */}
         <div className="relative w-full aspect-[3/4] bg-black">
           {hasImg ? (
             <img
@@ -62,36 +62,35 @@ function FeaturedPanel({ item, catId }) {
               <Flame size={80} className="text-[#FF7A00]/20" />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
 
-          {/* Badge */}
+          {/* Badge — petit chip discret */}
           {item.badge && (
             <span className="absolute top-5 left-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF7A00] text-black text-[11px] font-display tracking-wider uppercase glow-soft">
               <Flame size={12} strokeWidth={2.5} /> {item.badge}
             </span>
           )}
+        </div>
 
-          {/* Bottom info bar */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
-            <div className="flex items-end justify-between gap-4 mb-3">
-              <h3 className="font-display text-3xl sm:text-4xl leading-none">
-                {item.name}
-              </h3>
-              <span className="font-display text-2xl sm:text-3xl text-[#FF7A00] shrink-0">
-                {item.price}
-              </span>
-            </div>
-            <p className="text-sm text-white/70 max-w-md leading-relaxed">
-              {item.desc}
-            </p>
-            <div className="mt-4">
-              <AddButton
-                product={{ id: item.name, name: item.name, price: item.price, desc: item.desc }}
-                catId={catId}
-                label="Ajouter au panier"
-                className="text-sm px-5 py-2.5"
-              />
-            </div>
+        {/* Infos sous la photo — propres, hors image */}
+        <div className="p-5 sm:p-6 border-t border-[#1a1a1a]">
+          <div className="flex items-end justify-between gap-4 mb-2">
+            <h3 className="font-display text-2xl sm:text-3xl leading-none">
+              {item.name}
+            </h3>
+            <span className="font-display text-xl sm:text-2xl text-[#FF7A00] shrink-0">
+              {item.price}
+            </span>
+          </div>
+          {item.desc && (
+            <p className="text-sm text-white/65 leading-relaxed">{item.desc}</p>
+          )}
+          <div className="mt-4">
+            <AddButton
+              product={{ id: item.name, name: item.name, price: item.price, desc: item.desc }}
+              catId={catId}
+              label="Ajouter au panier"
+              className="text-sm px-5 py-2.5"
+            />
           </div>
         </div>
       </div>
@@ -215,30 +214,19 @@ function KidsMenu({ kids }) {
     desc: `Au choix : ${kids.choices.join(" ou ")}. Inclus : ${kids.includes.join(", ")}.`,
   };
   return (
-    <div className="rounded-3xl border border-[#FF7A00]/40 bg-gradient-to-br from-[#FF7A00]/15 to-[#0e0e0e] p-7 sm:p-10 relative overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]">
-      <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-[#FF7A00]/20 blur-3xl" />
-      <p className="num-tag relative mb-3">[ Pour les petits ]</p>
-      <p className="font-display text-7xl text-[#FF7A00] glow-orange-text leading-none">
-        {kids.price}
-      </p>
-      <p className="mt-2 text-xs text-white/65 uppercase tracking-[0.22em] mb-6">
-        Le menu complet
-      </p>
-      <div className="relative grid sm:grid-cols-2 gap-4 mb-6">
-        <div>
-          <p className="text-[11px] text-white/45 uppercase tracking-[0.22em] mb-2">Au choix</p>
-          <ul className="space-y-1.5 text-sm text-white/85">
-            {kids.choices.map((c) => <li key={c}>· {c}</li>)}
-          </ul>
-        </div>
-        <div>
-          <p className="text-[11px] text-white/45 uppercase tracking-[0.22em] mb-2">Inclus</p>
-          <ul className="space-y-1.5 text-sm text-white/85">
-            {kids.includes.map((c) => <li key={c}>· {c}</li>)}
-          </ul>
-        </div>
+    <div className="rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]">
+      <img
+        src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8dvgcbm7_ChatGPT%20Image%202%20mai%202026%2C%2001_19_59.png"
+        alt="Menu Enfant ITK — Mini Cheese ou 5 Nuggets, frites, Capri-Sun, compote — 5€"
+        className="block w-full h-auto"
+        loading="lazy"
+      />
+      <div className="p-6 sm:p-8 border-t border-[#1a1a1a] flex items-center justify-between gap-4 flex-wrap">
+        <p className="text-xs text-white/55 uppercase tracking-[0.22em]">
+          Bon appétit petit champion !
+        </p>
+        <AddButton product={product} catId="menu-enfant" label="Ajouter le menu" />
       </div>
-      <AddButton product={product} catId="menu-enfant" label="Ajouter le menu" />
     </div>
   );
 }
