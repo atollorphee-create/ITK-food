@@ -55,7 +55,8 @@ export default function ProductOptionsModal() {
   const [removed, setRemoved] = useState([]);
   const [meat, setMeat] = useState(null);
   const [extraMeat, setExtraMeat] = useState(false);
-  const [boxChoice, setBoxChoice] = useState(BOX_CHOICES[0]);
+  // Box ITK : forcer un choix de tenders uniquement (wings retirée — la box a 2 tenders par défaut)
+  const [boxChoice] = useState("2 Tenders");
   const [kidsChoice, setKidsChoice] = useState(KIDS_CHOICES[0]);
   const [makeMenu, setMakeMenu] = useState(false);
   const [drink, setDrink] = useState(DRINKS[0]);
@@ -72,7 +73,6 @@ export default function ProductOptionsModal() {
       setRemoved([]);
       setMeat(null);
       setExtraMeat(false);
-      setBoxChoice(BOX_CHOICES[0]);
       setKidsChoice(KIDS_CHOICES[0]);
       setMakeMenu(false);
       setDrink(DRINKS[0]);

@@ -1,10 +1,12 @@
 import AddButton from "./cart/AddButton";
 
+const BOX_IMG = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/nkt16xwx_ChatGPT%20Image%202%20mai%202026%2C%2001_06_20.png";
+
 const BOX_PRODUCT = {
   id: "box-itk",
   name: "Box ITK",
   price: "10€",
-  desc: "2 mini cheese + frites cheddar oignons + tenders ou wings.",
+  desc: "2 mini cheese + frites cheddar oignons + tenders.",
 };
 
 export default function BoxDeal() {
@@ -16,8 +18,8 @@ export default function BoxDeal() {
     >
       <div className="relative overflow-hidden rounded-[36px] border border-[#1a1a1a] bg-black transition-shadow duration-500 hover:shadow-[0_30px_80px_-20px_rgba(255,122,0,0.45)]">
         <img
-          src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/z6m7zzok_box%2010e.png"
-          alt="Box ITK 10€ — 2 mini cheese, frites cheddar oignons frits, tenders ou wings"
+          src={BOX_IMG}
+          alt="Box ITK 10€ — 2 mini cheese, frites cheddar oignons frits, 2 tenders"
           className="w-full h-auto block"
           loading="lazy"
         />
