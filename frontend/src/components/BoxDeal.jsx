@@ -1,6 +1,6 @@
 import AddButton from "./cart/AddButton";
 
-const BOX_IMG = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/nkt16xwx_ChatGPT%20Image%202%20mai%202026%2C%2001_06_20.png";
+const BOX_IMG = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/urfje6h1_box.png";
 
 const BOX_PRODUCT = {
   id: "box-itk",

@@ -35,7 +35,7 @@ export const FEATURED = [
     name: "Tacos ITK",
     price: "6,50€",
     desc: "Galette grillée, frites, sauce fromagère, viandes au choix.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/nu2ltukz_french%20tacos.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/2e2zours_tacos.png",
     tag: "Best-seller",
   },
   {
