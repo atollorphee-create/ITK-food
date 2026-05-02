@@ -59,8 +59,9 @@ export const CATEGORIES = [
         name: "Le Burger",
         price: "5,90€",
         desc: "2 steaks, cheddar, ketchup/moutarde, cornichons, oignons frits.",
-        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/p1nm7303_Le%20Burger.png",
+        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/bvvwwj3m_ChatGPT%20Image%202%20mai%202026%2C%2010_59_07.png",
         badge: "Le plus commandé",
+        featured: true,
       },
       {
         name: "L'Original",
@@ -68,7 +69,6 @@ export const CATEGORIES = [
         desc: "2 steaks, sauce smash, double cheddar, oignons confits.",
         img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/fljiy2wv_l%27original.png",
         badge: "Signature",
-        featured: true,
       },
       {
         name: "Le Smoky",
