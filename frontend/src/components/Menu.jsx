@@ -36,6 +36,26 @@ const HEADINGS = {
   divers: "Les Classiques",
 };
 
+function Hotspot({ hotspot, catId }) {
+  return (
+    <div
+      className="absolute -translate-x-1/2 -translate-y-1/2 group"
+      style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
+    >
+      <span className="absolute inset-0 rounded-full bg-[#FF7A00]/40 animate-ping pointer-events-none" />
+      <AddButton
+        product={{ id: hotspot.name, name: hotspot.name, price: hotspot.price }}
+        catId={catId}
+        label=""
+        className="relative !h-10 !w-10 !p-0 !rounded-full grid place-items-center shadow-[0_8px_30px_-6px_rgba(255,122,0,0.95)] ring-2 ring-black/50 hover:scale-110"
+      />
+      <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/85 backdrop-blur-sm border border-[#FF7A00]/40 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/90 opacity-0 group-hover:opacity-100 transition-opacity">
+        + {hotspot.name}
+      </span>
+    </div>
+  );
+}
+
 function FeaturedPanel({ item, catId }) {
   if (!item) return null;
   const hasImg = !!item.img;
@@ -269,39 +289,50 @@ export default function Menu() {
 
       {/* Image-only category (e.g., Petite Faim) */}
       {isImageOnly && (
-        <div
-          data-testid={`menu-imageonly-${active}`}
-          className="relative rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]"
-        >
-          <img
-            src={cat.imageOnly}
-            alt={cat.label}
-            className="block w-full h-auto select-none"
-            loading="lazy"
-            draggable={false}
-          />
-          {/* Hotspots cliquables pour ajouter au panier */}
-          {cat.hotspots?.map((h) => (
-            <div
-              key={h.name}
-              className="absolute -translate-x-1/2 -translate-y-1/2 group"
-              style={{ left: `${h.x}%`, top: `${h.y}%` }}
-            >
-              {/* Halo pulsant pour signaler les hotspots */}
-              <span className="absolute inset-0 rounded-full bg-[#FF7A00]/40 animate-ping pointer-events-none" />
-              <AddButton
-                product={{ id: h.name, name: h.name, price: h.price }}
-                catId={cat.id}
-                label=""
-                className="relative !h-10 !w-10 !p-0 !rounded-full grid place-items-center shadow-[0_8px_30px_-6px_rgba(255,122,0,0.95)] ring-2 ring-black/50 hover:scale-110"
-              />
-              {/* Tooltip nom du produit au hover */}
-              <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/85 backdrop-blur-sm border border-[#FF7A00]/40 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/90 opacity-0 group-hover:opacity-100 transition-opacity">
-                + {h.name}
-              </span>
+        <>
+          {/* Desktop : single landscape image */}
+          <div
+            data-testid={`menu-imageonly-${active}`}
+            className={`relative rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards] ${
+              cat.mobileImages?.length ? "hidden md:block" : ""
+            }`}
+          >
+            <img
+              src={cat.imageOnly}
+              alt={cat.label}
+              className="block w-full h-auto select-none"
+              loading="lazy"
+              draggable={false}
+            />
+            {cat.hotspots?.map((h) => (
+              <Hotspot key={h.name} hotspot={h} catId={cat.id} />
+            ))}
+          </div>
+
+          {/* Mobile : multiple stacked images, more readable */}
+          {cat.mobileImages?.length > 0 && (
+            <div className="md:hidden space-y-4" data-testid={`menu-imageonly-mobile-${active}`}>
+              {cat.mobileImages.map((mi, idx) => (
+                <div
+                  key={idx}
+                  className="relative rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]"
+                  style={{ animationDelay: `${idx * 80}ms` }}
+                >
+                  <img
+                    src={mi.src}
+                    alt={`${cat.label} ${idx + 1}`}
+                    className="block w-full h-auto select-none"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                  {mi.hotspots?.map((h) => (
+                    <Hotspot key={h.name} hotspot={h} catId={cat.id} />
+                  ))}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
 
       {/* Split layout */}

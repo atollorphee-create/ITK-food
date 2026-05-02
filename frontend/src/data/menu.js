@@ -180,7 +180,7 @@ export const CATEGORIES = [
     label: "Petite Faim",
     icon: "fries",
     imageOnly: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/j5n93ntu_sides.png",
-    // Hotspots cliquables placés sur l'image pour ajouter au panier
+    // Hotspots cliquables placés sur l'image desktop pour ajouter au panier
     hotspots: [
       { name: "Mini Cheese",         price: "3,50€", x: 38, y: 25 },
       { name: "Mozza Sticks ×4",     price: "2,90€", x: 78, y: 30 },
@@ -190,6 +190,26 @@ export const CATEGORIES = [
       { name: "Frites Classiques",   price: "2,50€", x: 37, y: 84 },
       { name: "Frites Cheddar",      price: "3,20€", x: 62, y: 84 },
       { name: "Frites Cheddar Bacon",price: "3,90€", x: 87, y: 84 },
+    ],
+    // Sur mobile : 2 images empilées, plus lisibles
+    mobileImages: [
+      {
+        src: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/4i90ojet_ChatGPT%20Image%202%20mai%202026%2C%2011_29_17.png",
+        hotspots: [
+          { name: "Mini Cheese",     price: "3,50€", x: 28, y: 37 },
+          { name: "Mozza Sticks ×4", price: "2,90€", x: 71, y: 37 },
+          { name: "Tenders ×2",      price: "2,90€", x: 24, y: 71 },
+          { name: "Nuggets ×4",      price: "2,90€", x: 72, y: 73 },
+        ],
+      },
+      {
+        src: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/nh3rti04_ChatGPT%20Image%202%20mai%202026%2C%2011_36_51.png",
+        hotspots: [
+          { name: "Frites Classiques",    price: "2,50€", x: 23, y: 38 },
+          { name: "Frites Cheddar",       price: "3,20€", x: 75, y: 38 },
+          { name: "Frites Cheddar Bacon", price: "3,90€", x: 50, y: 73 },
+        ],
+      },
     ],
     items: [
       { name: "Mini Cheese", price: "3,50€", desc: "Le smash en format mini." },
