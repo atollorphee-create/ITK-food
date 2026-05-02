@@ -181,12 +181,22 @@ export const CATEGORIES = [
     label: "Petite Faim",
     icon: "fries",
     imageOnly: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/j5n93ntu_sides.png",
+    // Hotspots cliquables placés sur l'image pour ajouter au panier
+    hotspots: [
+      { name: "Mini Cheese",         price: "3,50€", x: 38, y: 25 },
+      { name: "Mozza Sticks ×4",     price: "2,90€", x: 78, y: 30 },
+      { name: "Tenders ×2",          price: "2,90€", x: 42, y: 55 },
+      { name: "Nuggets ×4",          price: "2,90€", x: 86, y: 50 },
+      { name: "Chili Cheese ×4",     price: "2,90€", x: 17, y: 84 },
+      { name: "Frites Classiques",   price: "2,50€", x: 37, y: 84 },
+      { name: "Frites Cheddar",      price: "3,20€", x: 62, y: 84 },
+      { name: "Frites Cheddar Bacon",price: "3,90€", x: 87, y: 84 },
+    ],
     items: [
       { name: "Mini Cheese", price: "3,50€", desc: "Le smash en format mini." },
       { name: "Mozza Sticks ×4", price: "2,90€", desc: "Bâtonnets de mozzarella panés." },
       { name: "Tenders ×2", price: "2,90€", desc: "Tenders de poulet croustillants." },
       { name: "Nuggets ×4", price: "2,90€", desc: "Nuggets dorés au four." },
-      { name: "Wings Crispy ×4", price: "2,90€", desc: "Ailes de poulet panées épicées." },
       { name: "Chili Cheese ×4", price: "2,90€", desc: "Bouchées chili & fromage fondant." },
       { name: "Frites Classiques", price: "2,50€", desc: "Frites maison, sel marin." },
       { name: "Frites Cheddar", price: "3,20€", desc: "Frites + cheddar fondu." },

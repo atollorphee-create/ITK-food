@@ -271,14 +271,36 @@ export default function Menu() {
       {isImageOnly && (
         <div
           data-testid={`menu-imageonly-${active}`}
-          className="rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]"
+          className="relative rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]"
         >
           <img
             src={cat.imageOnly}
             alt={cat.label}
-            className="block w-full h-auto"
+            className="block w-full h-auto select-none"
             loading="lazy"
+            draggable={false}
           />
+          {/* Hotspots cliquables pour ajouter au panier */}
+          {cat.hotspots?.map((h) => (
+            <div
+              key={h.name}
+              className="absolute -translate-x-1/2 -translate-y-1/2 group"
+              style={{ left: `${h.x}%`, top: `${h.y}%` }}
+            >
+              {/* Halo pulsant pour signaler les hotspots */}
+              <span className="absolute inset-0 rounded-full bg-[#FF7A00]/40 animate-ping pointer-events-none" />
+              <AddButton
+                product={{ id: h.name, name: h.name, price: h.price }}
+                catId={cat.id}
+                label=""
+                className="relative !h-10 !w-10 !p-0 !rounded-full grid place-items-center shadow-[0_8px_30px_-6px_rgba(255,122,0,0.95)] ring-2 ring-black/50 hover:scale-110"
+              />
+              {/* Tooltip nom du produit au hover */}
+              <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/85 backdrop-blur-sm border border-[#FF7A00]/40 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/90 opacity-0 group-hover:opacity-100 transition-opacity">
+                + {h.name}
+              </span>
+            </div>
+          ))}
         </div>
       )}
 
