@@ -150,7 +150,7 @@ export const CATEGORIES = [
         name: "Compose ta Poutine",
         price: "6,90€",
         desc: "Frites, 1 viande au choix, sauce cheddar, oignons frits, sauce fromagère, gratinage mozzarella.",
-        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8zthyjsc_ChatGPT%20Image%2026%20avr.%202026%2C%2023_34_31.png",
+        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/av6sn8fw_poutine.png",
         badge: "Notre signature",
         featured: true,
       },
