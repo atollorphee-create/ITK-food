@@ -197,6 +197,7 @@ export const CATEGORIES = [
     id: "desserts",
     label: "Desserts",
     icon: "cake",
+    imageOnly: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/jaiib1nk_ChatGPT%20Image%202%20mai%202026%2C%2010_41_47.png",
     items: [
       { name: "Cheesecake", price: "3,50€", desc: "Onctueux, base biscuitée croustillante." },
       { name: "Tiramisu", price: "2,90€", desc: "Mascarpone, café, cacao." },
