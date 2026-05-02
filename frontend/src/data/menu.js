@@ -25,7 +25,7 @@ export const FEATURED = [
     name: "Le Boursin",
     price: "8,50€",
     desc: "Poulet fondant, crème boursin, mozzarella gratinée.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/cvl27stt_boursin%20sans%20description.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/3wc84m3v_ChatGPT%20Image%202%20mai%202026%2C%2022_00_11.png",
     imgPos: "center top",
   },
   {
