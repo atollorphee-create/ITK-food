@@ -17,7 +17,7 @@ export const FEATURED = [
     name: "L'Original",
     price: "6,90€",
     desc: "2 steaks smashés, sauce smash, double cheddar, oignons confits.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/21hzaugh_ChatGPT%20Image%202%20mai%202026%2C%2000_05_45.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/fljiy2wv_l%27original.png",
     tag: "Le classique",
   },
   {
@@ -66,7 +66,7 @@ export const CATEGORIES = [
         name: "L'Original",
         price: "6,90€",
         desc: "2 steaks, sauce smash, double cheddar, oignons confits.",
-        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/21hzaugh_ChatGPT%20Image%202%20mai%202026%2C%2000_05_45.png",
+        img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/fljiy2wv_l%27original.png",
         badge: "Signature",
         featured: true,
       },
