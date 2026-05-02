@@ -212,7 +212,8 @@ export default function Menu() {
     cat.items?.[0];
 
   const isKids = cat.isKids;
-  const showSplit = !isKids && cat.items && cat.items.length > 0;
+  const isImageOnly = !!cat.imageOnly;
+  const showSplit = !isKids && !isImageOnly && cat.items && cat.items.length > 0;
 
   return (
     <section
@@ -265,6 +266,21 @@ export default function Menu() {
 
       {/* Kids menu standalone */}
       {isKids && cat.kids && <KidsMenu kids={cat.kids} />}
+
+      {/* Image-only category (e.g., Petite Faim) */}
+      {isImageOnly && (
+        <div
+          data-testid={`menu-imageonly-${active}`}
+          className="rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]"
+        >
+          <img
+            src={cat.imageOnly}
+            alt={cat.label}
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Split layout */}
       {showSplit && (

@@ -180,6 +180,7 @@ export const CATEGORIES = [
     id: "petite-faim",
     label: "Petite Faim",
     icon: "fries",
+    imageOnly: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/j5n93ntu_sides.png",
     items: [
       { name: "Mini Cheese", price: "3,50€", desc: "Le smash en format mini." },
       { name: "Mozza Sticks ×4", price: "2,90€", desc: "Bâtonnets de mozzarella panés." },
