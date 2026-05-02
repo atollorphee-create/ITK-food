@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Beef,
   Sandwich,
@@ -37,18 +37,13 @@ const HEADINGS = {
 };
 
 function FeaturedPanel({ item, catId }) {
-  const [key, setKey] = useState(0);
-  useEffect(() => {
-    setKey((k) => k + 1);
-  }, [item?.name]);
-
   if (!item) return null;
   const hasImg = !!item.img;
 
   return (
-    <div key={key} className="animate-[pop-in_0.5s_ease-out_forwards]">
+    <div className="animate-[pop-in_0.5s_ease-out_forwards]">
       <div className="relative overflow-hidden rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e]">
-        {/* Image 3:4 ratio — clean, sans superpositions de texte */}
+        {/* Image — clean, infos déjà gravées dessus */}
         <div className="relative w-full aspect-[3/4] bg-black">
           {hasImg ? (
             <img
@@ -62,77 +57,50 @@ function FeaturedPanel({ item, catId }) {
               <Flame size={80} className="text-[#FF7A00]/20" />
             </div>
           )}
-
-          {/* Badge — petit chip discret */}
-          {item.badge && (
-            <span className="absolute top-5 left-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF7A00] text-black text-[11px] font-display tracking-wider uppercase glow-soft">
-              <Flame size={12} strokeWidth={2.5} /> {item.badge}
-            </span>
-          )}
         </div>
 
-        {/* Infos sous la photo — propres, hors image */}
-        <div className="p-5 sm:p-6 border-t border-[#1a1a1a]">
-          <div className="flex items-end justify-between gap-4 mb-2">
-            <h3 className="font-display text-2xl sm:text-3xl leading-none">
-              {item.name}
-            </h3>
-            <span className="font-display text-xl sm:text-2xl text-[#FF7A00] shrink-0">
-              {item.price}
-            </span>
-          </div>
-          {item.desc && (
-            <p className="text-sm text-white/65 leading-relaxed">{item.desc}</p>
-          )}
-          <div className="mt-4">
-            <AddButton
-              product={{ id: item.name, name: item.name, price: item.price, desc: item.desc }}
-              catId={catId}
-              label="Ajouter au panier"
-              className="text-sm px-5 py-2.5"
-            />
-          </div>
+        {/* Bouton ajouter au panier */}
+        <div className="p-5 sm:p-6 border-t border-[#1a1a1a] flex justify-end">
+          <AddButton
+            product={{ id: item.name, name: item.name, price: item.price, desc: item.desc }}
+            catId={catId}
+            label="Ajouter au panier"
+            className="text-sm px-5 py-2.5"
+          />
         </div>
       </div>
     </div>
   );
 }
 
-function ItemRow({ item, active, onClick }) {
+function ItemRow({ item, catId }) {
   return (
-    <button
-      onClick={onClick}
+    <div
       data-testid={`menu-row-${item.name.replace(/[^a-z0-9]/gi, "-").toLowerCase()}`}
-      className={`group w-full flex items-start gap-4 py-4 px-4 rounded-2xl text-left border transition ${
-        active
-          ? "bg-[#FF7A00]/10 border-[#FF7A00]/50"
-          : "bg-transparent border-transparent hover:border-[#1f1f1f] hover:bg-[#0e0e0e]"
-      }`}
+      className="group flex items-start gap-4 py-4 px-4 rounded-2xl border border-transparent hover:border-[#1f1f1f] hover:bg-[#0e0e0e] transition"
     >
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between gap-3">
-          <h4
-            className={`font-display text-base sm:text-lg leading-tight truncate ${
-              active ? "text-[#FF7A00]" : "text-white group-hover:text-[#FF7A00]"
-            }`}
-          >
+          <h4 className="font-display text-base sm:text-lg leading-tight truncate text-white group-hover:text-[#FF7A00] transition-colors">
             {item.name}
           </h4>
-          <span
-            className={`font-display text-sm sm:text-base shrink-0 ${
-              active ? "text-[#FF7A00]" : "text-[#FF7A00]"
-            }`}
-          >
+          <span className="font-display text-sm sm:text-base shrink-0 text-[#FF7A00]">
             {item.price}
           </span>
         </div>
         {item.desc && (
-          <p className="mt-1 text-xs sm:text-[13px] text-white/55 leading-relaxed line-clamp-2">
+          <p className="mt-1 text-xs sm:text-[13px] text-white/55 leading-relaxed">
             {item.desc}
           </p>
         )}
       </div>
-    </button>
+      <AddButton
+        product={{ id: item.name, name: item.name, price: item.price, desc: item.desc }}
+        catId={catId}
+        label=""
+        className="!px-2.5 !py-2 self-center shrink-0"
+      />
+    </div>
   );
 }
 
@@ -237,22 +205,11 @@ export default function Menu() {
   const Icon = ICONS[cat.icon] || Sparkles;
   const heading = HEADINGS[active] || cat.label;
 
-  // Featured = first item marked featured, otherwise first with image, otherwise first
-  const pickFeatured = (c) => {
-    if (!c.items?.length) return null;
-    return (
-      c.items.find((i) => i.featured) ||
-      c.items.find((i) => i.img) ||
-      c.items[0]
-    );
-  };
-
-  const [activeItem, setActiveItem] = useState(() => pickFeatured(CATEGORIES[0]));
-
-  // Update active item when category changes
-  useEffect(() => {
-    setActiveItem(pickFeatured(cat));
-  }, [active, cat]);
+  // Une seule image par section : le best-seller (featured)
+  const featuredItem =
+    cat.items?.find((i) => i.featured) ||
+    cat.items?.find((i) => i.img) ||
+    cat.items?.[0];
 
   const isKids = cat.isKids;
   const showSplit = !isKids && cat.items && cat.items.length > 0;
@@ -312,20 +269,15 @@ export default function Menu() {
       {/* Split layout */}
       {showSplit && (
         <div className="grid lg:grid-cols-12 gap-6" data-testid={`menu-split-${active}`}>
-          {/* Left — featured visual */}
+          {/* Left — featured visual (best-seller fixe de la section) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
-            <FeaturedPanel item={activeItem} catId={cat.id} />
+            <FeaturedPanel item={featuredItem} catId={cat.id} />
           </div>
 
           {/* Right — full list */}
           <div className="lg:col-span-7 space-y-1.5">
             {cat.items.map((it) => (
-              <ItemRow
-                key={it.name}
-                item={it}
-                active={activeItem?.name === it.name}
-                onClick={() => setActiveItem(it)}
-              />
+              <ItemRow key={it.name} item={it} catId={cat.id} />
             ))}
 
             {/* Builders: tacos + poutine */}
