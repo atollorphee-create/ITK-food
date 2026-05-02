@@ -26,6 +26,7 @@ export const FEATURED = [
     price: "8,50€",
     desc: "Poulet fondant, crème boursin, mozzarella gratinée.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/cvl27stt_boursin%20sans%20description.png",
+    imgPos: "center top",
   },
   {
     id: "tacos",

@@ -38,6 +38,7 @@ export default function Featured({ onOrder }) {
                 src={p.img}
                 alt={p.name}
                 className="absolute inset-0 w-full h-full object-cover"
+                style={p.imgPos ? { objectPosition: p.imgPos } : undefined}
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent" />
