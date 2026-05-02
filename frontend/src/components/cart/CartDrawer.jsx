@@ -19,6 +19,7 @@ function ItemDetails({ item }) {
   }
   if (kind === "box" && config.choice) lines.push(`Au choix : ${config.choice}`);
   if (kind === "kids" && config.choice) lines.push(`Au choix : ${config.choice}`);
+  if (config.sauce) lines.push(`Sauce : ${config.sauce}`);
   if (config.menu)
     lines.push(`Menu (frites + ${config.menu.drink}) +${config.menu.upgradePrice.toString().replace(".", ",")}€`);
   if (config.removed?.length) lines.push(`Sans : ${config.removed.join(", ")}`);

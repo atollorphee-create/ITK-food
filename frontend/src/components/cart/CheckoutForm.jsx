@@ -20,6 +20,7 @@ function buildOrderMessage({ items, total, form }) {
     if (c.extraMeat) lines.push(`   + Viande supplémentaire (+1,50€)`);
     if (c.meats?.length) lines.push(`   Viandes : ${c.meats.join(", ")}`);
     if (c.sauces?.length) lines.push(`   Sauces : ${c.sauces.join(", ")}`);
+    if (c.sauce) lines.push(`   Sauce : ${c.sauce}`);
     if (c.menu)
       lines.push(`   Menu : frites + ${c.menu.drink} (+${c.menu.upgradePrice.toString().replace(".", ",")}€)`);
     if (c.removed?.length) lines.push(`   Sans : ${c.removed.join(", ")}`);

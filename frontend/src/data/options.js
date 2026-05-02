@@ -31,6 +31,26 @@ export const SAUCES = [
   "Curry",
 ];
 
+// Liste complète des sauces pour Burgers / Sandwichs / Classiques
+export const BURGER_SAUCES = [
+  "Cheddar",
+  "Mayonnaise",
+  "Blanche (Fait maison)",
+  "Samouraï",
+  "Algérienne",
+  "Barbecue",
+  "Ketchup",
+  "Biggy Burger",
+  "Curry",
+  "Andalouse",
+  "Harissa",
+  "Chili Thaï",
+  "Magic Oignons",
+  "Chili Chicken (Fait maison)",
+  "Poivre",
+  "Sauce ITK (Fait maison)",
+];
+
 // Choix Box ITK
 export const BOX_CHOICES = ["2 Tenders", "3 Crispy Wings"];
 

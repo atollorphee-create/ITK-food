@@ -46,5 +46,7 @@ export function parseIngredients(desc) {
   return first
     .split(",")
     .map((x) => x.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    // exclure les mentions "sauce au choix" / "viande au choix" etc.
+    .filter((x) => !/au\s+choix/i.test(x));
 }

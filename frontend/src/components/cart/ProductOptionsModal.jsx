@@ -6,6 +6,7 @@ import {
   SHARED_SUPPLEMENTS,
   MEATS,
   SAUCES,
+  BURGER_SAUCES,
   BOX_CHOICES,
   KIDS_CHOICES,
   DRINKS,
@@ -55,6 +56,7 @@ export default function ProductOptionsModal() {
   const [removed, setRemoved] = useState([]);
   const [meat, setMeat] = useState(null);
   const [extraMeat, setExtraMeat] = useState(false);
+  const [burgerSauce, setBurgerSauce] = useState(null);
   // Box ITK : forcer un choix de tenders uniquement (wings retirée — la box a 2 tenders par défaut)
   const [boxChoice] = useState("2 Tenders");
   const [kidsChoice, setKidsChoice] = useState(KIDS_CHOICES[0]);
@@ -73,6 +75,7 @@ export default function ProductOptionsModal() {
       setRemoved([]);
       setMeat(null);
       setExtraMeat(false);
+      setBurgerSauce(null);
       setKidsChoice(KIDS_CHOICES[0]);
       setMakeMenu(false);
       setDrink(DRINKS[0]);
@@ -85,6 +88,9 @@ export default function ProductOptionsModal() {
   const { product, kind } = optionsModal;
   const ingredients = parseIngredients(product.desc || "");
   const basePrice = parsePrice(product.price);
+  // Sauce required only when description mentions "sauce au choix"
+  const sauceRequired =
+    kind === "burger" && /sauce\s+au\s+choix/i.test(product.desc || "");
 
   const toggle = (arr, setArr, value, max = Infinity) => {
     if (arr.includes(value)) {
@@ -115,6 +121,7 @@ export default function ProductOptionsModal() {
       return meats.length === size && sauces.length >= 1;
     }
     if (kind === "poutine") return !!meat;
+    if (sauceRequired) return !!burgerSauce;
     return true;
   })();
 
@@ -129,6 +136,7 @@ export default function ProductOptionsModal() {
       ...(kind === "kids" && { choice: kidsChoice }),
       ...(kind === "burger" &&
         removed.length > 0 && { removed }),
+      ...(sauceRequired && burgerSauce && { sauce: burgerSauce }),
       ...(menuAvailable && makeMenu && {
         menu: { drink, upgradePrice: MENU_UPGRADE_PRICE },
       }),
@@ -319,6 +327,24 @@ export default function ProductOptionsModal() {
                     </button>
                   );
                 })}
+              </div>
+            </Section>
+          )}
+
+          {/* BURGER / SANDWICH / CLASSIQUES — Choix sauce */}
+          {sauceRequired && (
+            <Section title="Choisis ta sauce" hint="obligatoire">
+              <div className="flex flex-wrap gap-2">
+                {BURGER_SAUCES.map((s) => (
+                  <Chip
+                    key={s}
+                    mini
+                    active={burgerSauce === s}
+                    onClick={() => setBurgerSauce(s)}
+                  >
+                    {s}
+                  </Chip>
+                ))}
               </div>
             </Section>
           )}
