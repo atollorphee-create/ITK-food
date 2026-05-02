@@ -41,9 +41,11 @@ export default function Featured({ onOrder }) {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent" />
-              <span className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full bg-black/60 border border-[#FF7A00]/40 text-[#FF7A00]">
-                {p.tag}
-              </span>
+              {p.tag && (
+                <span className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 rounded-full bg-black/60 border border-[#FF7A00]/40 text-[#FF7A00]">
+                  {p.tag}
+                </span>
+              )}
             </div>
             <div className="p-6">
               <div className="flex items-start justify-between gap-4 mb-2">

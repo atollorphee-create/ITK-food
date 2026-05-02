@@ -18,7 +18,6 @@ export const FEATURED = [
     price: "5,90€",
     desc: "Tenders croustillants, cheddar fondu, sauce au choix.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/i3e2obdm_ChatGPT%20Image%202%20mai%202026%2C%2010_20_25.png",
-    tag: "Le classique",
   },
   {
     id: "boursin",
@@ -27,7 +26,6 @@ export const FEATURED = [
     price: "8,50€",
     desc: "Poulet fondant, crème boursin, mozzarella gratinée.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/cvl27stt_boursin%20sans%20description.png",
-    tag: "Gourmand",
   },
   {
     id: "tacos",
