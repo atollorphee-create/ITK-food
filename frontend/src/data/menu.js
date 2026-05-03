@@ -8,7 +8,7 @@ export const FEATURED = [
     name: "Le Smoky",
     price: "8,50€",
     desc: "2 steaks, bacon, raclette fondue, sauce smoky, rosty croustillant.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/tk0jnbwd_ChatGPT%20Image%2028%20avr.%202026%2C%2022_26_49.png",
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/i4ubo7df_ChatGPT%20Image%203%20mai%202026%2C%2009_38_05.png",
     tag: "Premium",
   },
   {
@@ -34,6 +34,7 @@ export const FEATURED = [
     price: "6,50€",
     desc: "Galette grillée, frites, sauce fromagère, viandes au choix.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/2e2zours_tacos.png",
+    imgScale: 0.65,
     tag: "Best-seller",
   },
   {
@@ -43,6 +44,7 @@ export const FEATURED = [
     price: "6,90€",
     desc: "Frites, viande au choix, cheddar, oignons frits, mozza gratinée.",
     img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8zthyjsc_ChatGPT%20Image%2026%20avr.%202026%2C%2023_34_31.png",
+    imgScale: 0.65,
     tag: "Notre signature",
   },
 ];

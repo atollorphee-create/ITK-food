@@ -37,7 +37,7 @@ export default function Featured({ onOrder }) {
               <img
                 src={p.img}
                 alt={p.name}
-                className="absolute inset-0 w-full h-full object-cover"
+                className={`absolute inset-0 w-full h-full ${p.imgScale ? "object-contain p-3" : "object-cover"}`}
                 style={p.imgPos ? { objectPosition: p.imgPos } : undefined}
                 loading="lazy"
               />
