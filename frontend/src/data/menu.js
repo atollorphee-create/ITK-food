@@ -33,8 +33,7 @@ export const FEATURED = [
     name: "Tacos ITK",
     price: "6,50€",
     desc: "Galette grillée, frites, sauce fromagère, viandes au choix.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/2e2zours_tacos.png",
-    imgScale: 0.65,
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/i8zeg6la_ChatGPT%20Image%203%20mai%202026%2C%2010_01_52.png",
     tag: "Best-seller",
   },
   {
@@ -43,8 +42,7 @@ export const FEATURED = [
     name: "Poutine ITK",
     price: "6,90€",
     desc: "Frites, viande au choix, cheddar, oignons frits, mozza gratinée.",
-    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8zthyjsc_ChatGPT%20Image%2026%20avr.%202026%2C%2023_34_31.png",
-    imgScale: 0.65,
+    img: "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/ykn05lmp_ChatGPT%20Image%203%20mai%202026%2C%2010_11_09.png",
     tag: "Notre signature",
   },
 ];
