@@ -69,8 +69,9 @@ export default function OrderSection({ onOrder }) {
           <button
             onClick={openDrawer}
             data-testid="ordersection-cta"
-            className="btn-orange mt-7 px-7 py-4 rounded-full font-display tracking-wider text-sm"
+            className="btn-orange mt-7 px-7 py-4 rounded-full font-display tracking-wider text-sm inline-flex items-center gap-2.5"
           >
+            <ShoppingBag size={16} strokeWidth={2.4} />
             Commander via le site
           </button>
         </div>
