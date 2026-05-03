@@ -57,8 +57,8 @@ export default function ProductOptionsModal() {
   const [meat, setMeat] = useState(null);
   const [extraMeat, setExtraMeat] = useState(false);
   const [burgerSauce, setBurgerSauce] = useState(null);
-  // Box ITK : forcer un choix de tenders uniquement (wings retirée — la box a 2 tenders par défaut)
-  const [boxChoice] = useState("2 Tenders");
+  // Box ITK : choix entre 2 Tenders ou 3 Crispy Wings
+  const [boxChoice, setBoxChoice] = useState(BOX_CHOICES[0]);
   const [kidsChoice, setKidsChoice] = useState(KIDS_CHOICES[0]);
   const [makeMenu, setMakeMenu] = useState(false);
   const [drink, setDrink] = useState(DRINKS[0]);
@@ -76,6 +76,7 @@ export default function ProductOptionsModal() {
       setMeat(null);
       setExtraMeat(false);
       setBurgerSauce(null);
+      setBoxChoice(BOX_CHOICES[0]);
       setKidsChoice(KIDS_CHOICES[0]);
       setMakeMenu(false);
       setDrink(DRINKS[0]);
