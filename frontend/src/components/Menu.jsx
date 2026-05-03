@@ -201,14 +201,22 @@ function KidsMenu({ kids }) {
     price: kids.price,
     desc: `Au choix : ${kids.choices.join(" ou ")}. Inclus : ${kids.includes.join(", ")}.`,
   };
+  const desktopImg =
+    "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8dvgcbm7_ChatGPT%20Image%202%20mai%202026%2C%2001_19_59.png";
+  const mobileImg =
+    "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/mf4pjsuv_ChatGPT%20Image%203%20mai%202026%2C%2010_41_48.png";
+
   return (
     <div className="rounded-3xl border border-[#1a1a1a] bg-[#0e0e0e] overflow-hidden animate-[pop-in_0.5s_ease-out_forwards]">
-      <img
-        src="https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/8dvgcbm7_ChatGPT%20Image%202%20mai%202026%2C%2001_19_59.png"
-        alt="Menu Enfant ITK — Mini Cheese ou 5 Nuggets, frites, Capri-Sun, compote — 5€"
-        className="block w-full h-auto"
-        loading="lazy"
-      />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={mobileImg} />
+        <img
+          src={desktopImg}
+          alt="Menu Enfant ITK — Mini Cheese ou 5 Nuggets, frites, Capri-Sun, compote — 5€"
+          className="block w-full h-auto"
+          loading="lazy"
+        />
+      </picture>
       <div className="p-6 sm:p-8 border-t border-[#1a1a1a] flex items-center justify-between gap-4 flex-wrap">
         <p className="text-xs text-white/55 uppercase tracking-[0.22em]">
           Bon appétit petit champion !

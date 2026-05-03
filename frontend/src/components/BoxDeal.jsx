@@ -1,6 +1,7 @@
 import AddButton from "./cart/AddButton";
 
-const BOX_IMG = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/urfje6h1_box.png";
+const BOX_IMG_DESKTOP = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/urfje6h1_box.png";
+const BOX_IMG_MOBILE = "https://customer-assets.emergentagent.com/job_itk-showcase/artifacts/l6tffw9j_ChatGPT%20Image%203%20mai%202026%2C%2010_46_16.png";
 
 const BOX_PRODUCT = {
   id: "box-itk",
@@ -17,12 +18,15 @@ export default function BoxDeal() {
       className="relative max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28"
     >
       <div className="relative overflow-hidden rounded-[36px] border border-[#1a1a1a] bg-black transition-shadow duration-500 hover:shadow-[0_30px_80px_-20px_rgba(255,122,0,0.45)]">
-        <img
-          src={BOX_IMG}
-          alt="Box ITK 10€ — 2 mini cheese, frites cheddar oignons frits, 2 tenders"
-          className="w-full h-auto block"
-          loading="lazy"
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={BOX_IMG_MOBILE} />
+          <img
+            src={BOX_IMG_DESKTOP}
+            alt="Box ITK 10€ — 2 mini cheese, frites cheddar oignons frits, 2 tenders"
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+        </picture>
         <div className="absolute bottom-5 right-5 sm:bottom-8 sm:right-8">
           <AddButton
             product={BOX_PRODUCT}
